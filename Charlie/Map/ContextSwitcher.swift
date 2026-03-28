@@ -1,19 +1,29 @@
 import SwiftUI
 
 struct ContextSwitcher: View {
-    @Binding var selectedContext: String?
+    @Bindable var store: DiscoveryStore
 
     var body: some View {
-        // TODO: Implement context switching UI
         HStack {
-            Text("Context")
-                .font(.headline)
-            Spacer()
-        }
-        .padding()
-    }
-}
+            Image(systemName: "map")
+                .foregroundColor(.primary)
 
-#Preview {
-    ContextSwitcher(selectedContext: .constant(nil))
+            Picker("Context", selection: $store.activeContext) {
+                ForEach(store.contexts) { ctx in
+                    Text(ctx.emoji + " " + ctx.label)
+                        .tag(Optional(ctx))
+                }
+            }
+            .pickerStyle(.menu)
+
+            Spacer()
+
+            Button(action: {}) {
+                Image(systemName: "bubble.left")
+            }
+        }
+        .padding(.horizontal)
+        .padding(.vertical, 8)
+        .background(.ultraThinMaterial)
+    }
 }

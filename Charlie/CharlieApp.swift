@@ -2,9 +2,12 @@ import SwiftUI
 
 @main
 struct CharlieApp: App {
+    @State private var discoveryStore = DiscoveryStore()
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MapView()
+                .environment(discoveryStore)
         }
     }
 }

@@ -19,6 +19,8 @@
 		PlaceBottomSheet_swift_AA0000000000000010 /* PlaceBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = PlaceBottomSheet_swift_REF0000000010 /* PlaceBottomSheet.swift */; };
 		PlaceCard_swift_AA0000000000000011 /* PlaceCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = PlaceCard_swift_REF0000000011 /* PlaceCard.swift */; };
 		UserManifest_swift_AA0000000000000012 /* UserManifest.swift in Sources */ = {isa = PBXBuildFile; fileRef = UserManifest_swift_REF0000000012 /* UserManifest.swift */; };
+		DiscoveryStore_swift_AA0000000000000013 /* DiscoveryStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DiscoveryStore_swift_REF0000000013 /* DiscoveryStore.swift */; };
+		PlacePinView_swift_AA0000000000000014 /* PlacePinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = PlacePinView_swift_REF0000000014 /* PlacePinView.swift */; };
 		MapKit_framework_REF0000000001 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = MapKit_framework_REF0000000002 /* MapKit.framework */; };
 		Security_framework_REF0000000014 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = Security_framework_REF0000000015 /* Security.framework */; };
 /* End PBXBuildFile section */
@@ -40,6 +42,8 @@
 		Security_framework_REF0000000015 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		PlaceCard_swift_REF0000000011 /* PlaceCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceCard.swift; sourceTree = "<group>"; };
 		UserManifest_swift_REF0000000012 /* UserManifest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManifest.swift; sourceTree = "<group>"; };
+		DiscoveryStore_swift_REF0000000013 /* DiscoveryStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryStore.swift; sourceTree = "<group>"; };
+		PlacePinView_swift_REF0000000014 /* PlacePinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacePinView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,9 +85,18 @@
 			children = (
 				Charlie_Core_APIClient_REF0000000020 /* APIClient.swift */,
 				Charlie_Core_AuthManager_REF0000000021 /* AuthManager.swift */,
+				Charlie_Core_Store_Group_REF0000000023 /* Store */,
 				Charlie_Core_Models_Group_REF0000000022 /* Models */,
 			);
 			path = Core;
+			sourceTree = "<group>";
+		};
+		Charlie_Core_Store_Group_REF0000000023 /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				DiscoveryStore_swift_REF0000000013 /* DiscoveryStore.swift */,
+			);
+			path = Store;
 			sourceTree = "<group>";
 		};
 		Charlie_Core_Models_Group_REF0000000022 /* Models */ = {
@@ -120,6 +133,7 @@
 				MapView_swift_REF0000000008 /* MapView.swift */,
 				ContextSwitcher_swift_REF0000000009 /* ContextSwitcher.swift */,
 				PlaceBottomSheet_swift_REF0000000010 /* PlaceBottomSheet.swift */,
+				PlacePinView_swift_REF0000000014 /* PlacePinView.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -220,6 +234,8 @@
 				PlaceBottomSheet_swift_AA0000000000000010 /* PlaceBottomSheet.swift in Sources */,
 				PlaceCard_swift_AA0000000000000011 /* PlaceCard.swift in Sources */,
 				UserManifest_swift_AA0000000000000012 /* UserManifest.swift in Sources */,
+				DiscoveryStore_swift_AA0000000000000013 /* DiscoveryStore.swift in Sources */,
+				PlacePinView_swift_AA0000000000000014 /* PlacePinView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
