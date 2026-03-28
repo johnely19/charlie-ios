@@ -6,19 +6,17 @@ import UserNotifications
 @main
 struct CharlieApp: App {
     @State private var discoveryStore = DiscoveryStore()
+    @State private var isAuthenticated = AuthManager.shared.isAuthenticated
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
 
     var body: some Scene {
         WindowGroup {
-            TabView {
+            if isAuthenticated {
                 MapView()
-                    .tabItem { Label("Map", systemImage: "map") }
-                ReviewView()
-                    .tabItem { Label("Review", systemImage: "checkmark.square") }
-            }
-            .environment(discoveryStore)
-            .task {
-                await NotificationManager.shared.requestPermission()
+                    .environment(discoveryStore)
+                    .task { await NotificationManager.shared.requestPermission() }
+            } else {
+                OnboardingView(onComplete: { isAuthenticated = true })
             }
         }
     }

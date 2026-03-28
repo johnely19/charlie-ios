@@ -3,6 +3,7 @@ import MapKit
 
 struct MapView: View {
     @Environment(DiscoveryStore.self) var store
+    @Environment(\.colorScheme) var colorScheme
     @State private var selectedDiscovery: Discovery?
     @State private var showChat = false
     @State private var showTrip = false
@@ -42,7 +43,10 @@ struct MapView: View {
                     }
                 }
             }
-            .mapStyle(.standard(elevation: .realistic))
+            .mapStyle(colorScheme == .dark
+                ? .standard(elevation: .realistic, colorScheme: .dark)
+                : .standard(elevation: .realistic)
+            )
             .mapControls {
                 MapUserLocationButton()
                 MapCompass()

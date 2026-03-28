@@ -59,7 +59,7 @@ actor APIClient {
     // MARK: - Auth
 
     func authenticate(code: String) async throws -> AuthResponse {
-        let url = baseURL.appendingPathComponent("auth")
+        let url = baseURL.appendingPathComponent("api/auth/token")
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
