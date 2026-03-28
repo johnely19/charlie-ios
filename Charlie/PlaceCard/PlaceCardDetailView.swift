@@ -67,6 +67,13 @@ struct PlaceCardDetailView: View {
                     .padding(.bottom, 8)
                 }
 
+                // Look Around button
+                if let coord = discovery.coordinate {
+                    LookAroundButton(coordinate: coord)
+                        .padding(.horizontal)
+                        .padding(.bottom, 8)
+                }
+
                 // Summary
                 if let summary = discovery.summary {
                     Text(summary)

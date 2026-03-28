@@ -21,6 +21,8 @@
 		UserManifest_swift_AA0000000000000012 /* UserManifest.swift in Sources */ = {isa = PBXBuildFile; fileRef = UserManifest_swift_REF0000000012 /* UserManifest.swift */; };
 		DiscoveryStore_swift_AA0000000000000013 /* DiscoveryStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DiscoveryStore_swift_REF0000000013 /* DiscoveryStore.swift */; };
 		PlacePinView_swift_AA0000000000000014 /* PlacePinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = PlacePinView_swift_REF0000000014 /* PlacePinView.swift */; };
+		LookAroundButton_swift_AA0000000000000015 /* LookAroundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = LookAroundButton_swift_REF0000000015 /* LookAroundButton.swift */; };
+		RouteOverlayManager_swift_AA0000000000000016 /* RouteOverlayManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = RouteOverlayManager_swift_REF0000000016 /* RouteOverlayManager.swift */; };
 		MapKit_framework_REF0000000001 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = MapKit_framework_REF0000000002 /* MapKit.framework */; };
 		Security_framework_REF0000000014 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = Security_framework_REF0000000015 /* Security.framework */; };
 /* End PBXBuildFile section */
@@ -44,6 +46,8 @@
 		UserManifest_swift_REF0000000012 /* UserManifest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManifest.swift; sourceTree = "<group>"; };
 		DiscoveryStore_swift_REF0000000013 /* DiscoveryStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryStore.swift; sourceTree = "<group>"; };
 		PlacePinView_swift_REF0000000014 /* PlacePinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacePinView.swift; sourceTree = "<group>"; };
+		LookAroundButton_swift_REF0000000015 /* LookAroundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookAroundButton.swift; sourceTree = "<group>"; };
+		RouteOverlayManager_swift_REF0000000016 /* RouteOverlayManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteOverlayManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +138,8 @@
 				ContextSwitcher_swift_REF0000000009 /* ContextSwitcher.swift */,
 				PlaceBottomSheet_swift_REF0000000010 /* PlaceBottomSheet.swift */,
 				PlacePinView_swift_REF0000000014 /* PlacePinView.swift */,
+				LookAroundButton_swift_REF0000000015 /* LookAroundButton.swift */,
+				RouteOverlayManager_swift_REF0000000016 /* RouteOverlayManager.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -236,6 +242,8 @@
 				UserManifest_swift_AA0000000000000012 /* UserManifest.swift in Sources */,
 				DiscoveryStore_swift_AA0000000000000013 /* DiscoveryStore.swift in Sources */,
 				PlacePinView_swift_AA0000000000000014 /* PlacePinView.swift in Sources */,
+				LookAroundButton_swift_AA0000000000000015 /* LookAroundButton.swift in Sources */,
+				RouteOverlayManager_swift_AA0000000000000016 /* RouteOverlayManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
