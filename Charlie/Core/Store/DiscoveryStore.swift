@@ -1,6 +1,7 @@
 import SwiftUI
 import MapKit
 import UIKit
+import WidgetKit
 
 @Observable
 class DiscoveryStore {
@@ -10,6 +11,12 @@ class DiscoveryStore {
     var activeContext: Context?
     var isLoading = false
     var error: String?
+
+    @MainActor static var sharedForIntents: DiscoveryStore = {
+        let store = DiscoveryStore()
+        Task { await store.load() }
+        return store
+    }()
 
     var filteredDiscoveries: [Discovery] {
         guard let ctx = activeContext else { return discoveries }
@@ -51,6 +58,41 @@ class DiscoveryStore {
             self.error = error.localizedDescription
         }
         isLoading = false
+        updateWidgetData()
+
+        // Schedule notifications after loading
+        if let ctx = activeContext {
+            let allForCtx = discoveries.filter { $0.contextKey == ctx.key }
+            let saved = allForCtx.filter { triageStore.state(for: $0.id, in: ctx.key) == .saved }
+            let unreviewed = allForCtx.filter { triageStore.state(for: $0.id, in: ctx.key) == .unreviewed }
+
+            NotificationManager.shared.scheduleMorningBriefing(
+                contextLabel: ctx.label,
+                contextEmoji: ctx.emoji,
+                savedCount: saved.count,
+                unreviewedCount: unreviewed.count
+            )
+            NotificationManager.shared.scheduleTripReminder(for: ctx)
+        }
+    }
+
+    func updateWidgetData() {
+        guard let defaults = UserDefaults(suiteName: "group.com.charlie.travel") else { return }
+        guard let ctx = activeContext else { return }
+
+        let allForCtx = discoveries.filter { $0.contextKey == ctx.key }
+        let saved = allForCtx.filter { triageStore.state(for: $0.id, in: ctx.key) == .saved }
+        let unreviewed = allForCtx.filter { triageStore.state(for: $0.id, in: ctx.key) == .unreviewed }
+
+        defaults.set(ctx.label, forKey: "widget.contextLabel")
+        defaults.set(ctx.emoji, forKey: "widget.contextEmoji")
+        defaults.set(saved.count, forKey: "widget.savedCount")
+        defaults.set(unreviewed.count, forKey: "widget.unreviewedCount")
+        defaults.set(saved.prefix(3).map(\.name), forKey: "widget.topPlaces")
+        defaults.set(saved.first?.name, forKey: "widget.nextPlaceName")
+        defaults.set(saved.first?.type.rawValue, forKey: "widget.nextPlaceType")
+
+        WidgetCenter.shared.reloadAllTimelines()
     }
 
     func triage(discovery: Discovery, state: TriageState) async {
@@ -67,6 +109,7 @@ class DiscoveryStore {
 
         do {
             try await APIClient.shared.setTriage(discoveryId: discovery.id, contextKey: ctx.key, state: state)
+            updateWidgetData()
         } catch {
             self.error = error.localizedDescription
         }
@@ -90,4 +133,8 @@ extension Context {
             return MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 43.6532, longitude: -79.3832), latitudinalMeters: 50000, longitudinalMeters: 50000)
         }
     }
+}
+
+extension String {
+    var nilIfEmpty: String? { isEmpty ? nil : self }
 }

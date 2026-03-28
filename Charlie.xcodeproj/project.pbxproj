@@ -23,6 +23,9 @@
 		PlacePinView_swift_AA0000000000000014 /* PlacePinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = PlacePinView_swift_REF0000000014 /* PlacePinView.swift */; };
 		LookAroundButton_swift_AA0000000000000015 /* LookAroundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = LookAroundButton_swift_REF0000000015 /* LookAroundButton.swift */; };
 		RouteOverlayManager_swift_AA0000000000000016 /* RouteOverlayManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = RouteOverlayManager_swift_REF0000000016 /* RouteOverlayManager.swift */; };
+		CharlieIntents_swift_AA0000000000000017 /* CharlieIntents.swift in Sources */ = {isa = PBXBuildFile; fileRef = CharlieIntents_swift_REF0000000017 /* CharlieIntents.swift */; };
+		NotificationManager_swift_AA0000000000000018 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = NotificationManager_swift_REF0000000018 /* NotificationManager.swift */; };
+		CharlieWidget_swift_AA0000000000000019 /* CharlieWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = CharlieWidget_swift_REF0000000019 /* CharlieWidget.swift */; };
 		MapKit_framework_REF0000000001 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = MapKit_framework_REF0000000002 /* MapKit.framework */; };
 		Security_framework_REF0000000014 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = Security_framework_REF0000000015 /* Security.framework */; };
 /* End PBXBuildFile section */
@@ -48,6 +51,11 @@
 		PlacePinView_swift_REF0000000014 /* PlacePinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacePinView.swift; sourceTree = "<group>"; };
 		LookAroundButton_swift_REF0000000015 /* LookAroundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookAroundButton.swift; sourceTree = "<group>"; };
 		RouteOverlayManager_swift_REF0000000016 /* RouteOverlayManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteOverlayManager.swift; sourceTree = "<group>"; };
+		CharlieIntents_swift_REF0000000017 /* CharlieIntents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharlieIntents.swift; sourceTree = "<group>"; };
+		NotificationManager_swift_REF0000000018 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		CharlieWidget_swift_REF0000000019 /* CharlieWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharlieWidget.swift; sourceTree = "<group>"; };
+		CharlieWidget_InfoPlist_REF0000000020 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CharlieWidget_Product_REF0000000021 /* CharlieWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = CharlieWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +75,7 @@
 			isa = PBXGroup;
 			children = (
 				Charlie_Group_REF0000000015 /* Charlie */,
+				CharlieWidget_Group_REF0000000026 /* CharlieWidget */,
 				Charlie_xcodeproj_Group_REF0000000016 /* Charlie.xcodeproj */,
 				Charlie_Products_Group_REF0000000017 /* Products */,
 			);
@@ -80,6 +89,7 @@
 				Charlie_InfoPlist_REF0000000011 /* Info.plist */,
 				Charlie_Core_Group_REF0000000018 /* Core */,
 				Charlie_Map_Group_REF0000000019 /* Map */,
+				Charlie_Intents_Group_REF0000000024 /* Intents */,
 			);
 			path = Charlie;
 			sourceTree = "<group>";
@@ -91,6 +101,7 @@
 				Charlie_Core_AuthManager_REF0000000021 /* AuthManager.swift */,
 				Charlie_Core_Store_Group_REF0000000023 /* Store */,
 				Charlie_Core_Models_Group_REF0000000022 /* Models */,
+				NotificationManager_swift_REF0000000018 /* NotificationManager.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -144,6 +155,23 @@
 			path = Map;
 			sourceTree = "<group>";
 		};
+		Charlie_Intents_Group_REF0000000025 /* Intents */ = {
+			isa = PBXGroup;
+			children = (
+				CharlieIntents_swift_REF0000000017 /* CharlieIntents.swift */,
+			);
+			path = Intents;
+			sourceTree = "<group>";
+		};
+		CharlieWidget_Group_REF0000000026 /* CharlieWidget */ = {
+			isa = PBXGroup;
+			children = (
+				CharlieWidget_swift_REF0000000019 /* CharlieWidget.swift */,
+				CharlieWidget_InfoPlist_REF0000000020 /* Info.plist */,
+			);
+			path = CharlieWidget;
+			sourceTree = "<group>";
+		};
 		Charlie_xcodeproj_Group_REF0000000016 /* Charlie.xcodeproj */ = {
 			isa = PBXGroup;
 			children = (
@@ -180,6 +208,23 @@
 			productReference = Charlie_Product_REF0000000012 /* Charlie.app */;
 			productType = "com.apple.product-type.application";
 		};
+		CharlieWidget_Target_REF0000000027 /* CharlieWidget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CharlieWidget_BuildConfigList_REF0000000028 /* Build configuration list for PBXNativeTarget "CharlieWidget" */;
+			buildPhases = (
+				CharlieWidget_Sources_Phase_REF0000000029 /* Sources */,
+				CharlieWidget_Frameworks_Phase_REF0000000030 /* Frameworks */,
+				CharlieWidget_Resources_Phase_REF0000000031 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CharlieWidget;
+			productName = CharlieWidgetExtension;
+			productReference = CharlieWidget_Product_REF0000000021 /* CharlieWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -191,6 +236,9 @@
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
 					Charlie_Target_REF0000000024 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+					CharlieWidget_Target_REF0000000027 = {
 						CreatedOnToolsVersion = 15.0;
 					};
 				};
@@ -209,6 +257,7 @@
 			projectRoot = "";
 			targets = (
 				Charlie_Target_REF0000000024 /* Charlie */,
+				CharlieWidget_Target_REF0000000027 /* CharlieWidget */,
 			);
 		};
 /* End PBXProject section */
@@ -244,6 +293,39 @@
 				PlacePinView_swift_AA0000000000000014 /* PlacePinView.swift in Sources */,
 				LookAroundButton_swift_AA0000000000000015 /* LookAroundButton.swift in Sources */,
 				RouteOverlayManager_swift_AA0000000000000016 /* RouteOverlayManager.swift in Sources */,
+				CharlieIntents_swift_AA0000000000000017 /* CharlieIntents.swift in Sources */,
+				NotificationManager_swift_AA0000000000000018 /* NotificationManager.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CharlieWidget_Frameworks_Phase_REF0000000030 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CharlieWidget_Resources_Phase_REF0000000031 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CharlieWidget_Sources_Phase_REF0000000029 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CharlieWidget_swift_AA0000000000000019 /* CharlieWidget.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -429,6 +511,54 @@
 			};
 			name = Release;
 		};
+		CharlieWidget_Debug_Config_REF0000000034 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = CharlieWidget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.charlie.travel.widget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1";
+			};
+			name = Debug;
+		};
+		CharlieWidget_Release_Config_REF0000000035 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = CharlieWidget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.charlie.travel.widget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -446,6 +576,15 @@
 			buildConfigurations = (
 				Charlie_Target_Debug_Config_REF0000000032 /* Debug */,
 				Charlie_Target_Release_Config_REF0000000033 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CharlieWidget_BuildConfigList_REF0000000028 /* Build configuration list for PBXNativeTarget "CharlieWidget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CharlieWidget_Debug_Config_REF0000000034 /* Debug */,
+				CharlieWidget_Release_Config_REF0000000035 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
