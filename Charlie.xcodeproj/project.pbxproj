@@ -7,255 +7,346 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CharlieApp_swift_AA0000000000000001 /* CharlieApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CharlieApp_swift_REF0000000001 /* CharlieApp.swift */; };
-		ContentView_swift_AA0000000000000002 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ContentView_swift_REF0000000002 /* ContentView.swift */; };
-		Discovery_swift_AA0000000000000003 /* Discovery.swift in Sources */ = {isa = PBXBuildFile; fileRef = Discovery_swift_REF0000000003 /* Discovery.swift */; };
-		Context_swift_AA0000000000000004 /* Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = Context_swift_REF0000000004 /* Context.swift */; };
-		TriageState_swift_AA0000000000000005 /* TriageState.swift in Sources */ = {isa = PBXBuildFile; fileRef = TriageState_swift_REF0000000005 /* TriageState.swift */; };
-		APIClient_swift_AA0000000000000006 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = APIClient_swift_REF0000000006 /* APIClient.swift */; };
-		AuthManager_swift_AA0000000000000007 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AuthManager_swift_REF0000000007 /* AuthManager.swift */; };
-		MapView_swift_AA0000000000000008 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = MapView_swift_REF0000000008 /* MapView.swift */; };
-		ContextSwitcher_swift_AA0000000000000009 /* ContextSwitcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = ContextSwitcher_swift_REF0000000009 /* ContextSwitcher.swift */; };
-		PlaceBottomSheet_swift_AA0000000000000010 /* PlaceBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = PlaceBottomSheet_swift_REF0000000010 /* PlaceBottomSheet.swift */; };
-		PlaceCard_swift_AA0000000000000011 /* PlaceCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = PlaceCard_swift_REF0000000011 /* PlaceCard.swift */; };
-		UserManifest_swift_AA0000000000000012 /* UserManifest.swift in Sources */ = {isa = PBXBuildFile; fileRef = UserManifest_swift_REF0000000012 /* UserManifest.swift */; };
-		DiscoveryStore_swift_AA0000000000000013 /* DiscoveryStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DiscoveryStore_swift_REF0000000013 /* DiscoveryStore.swift */; };
-		PlacePinView_swift_AA0000000000000014 /* PlacePinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = PlacePinView_swift_REF0000000014 /* PlacePinView.swift */; };
-		LookAroundButton_swift_AA0000000000000015 /* LookAroundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = LookAroundButton_swift_REF0000000015 /* LookAroundButton.swift */; };
-		RouteOverlayManager_swift_AA0000000000000016 /* RouteOverlayManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = RouteOverlayManager_swift_REF0000000016 /* RouteOverlayManager.swift */; };
-		CharlieIntents_swift_AA0000000000000017 /* CharlieIntents.swift in Sources */ = {isa = PBXBuildFile; fileRef = CharlieIntents_swift_REF0000000017 /* CharlieIntents.swift */; };
-		NotificationManager_swift_AA0000000000000018 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = NotificationManager_swift_REF0000000018 /* NotificationManager.swift */; };
-		CharlieWidget_swift_AA0000000000000019 /* CharlieWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = CharlieWidget_swift_REF0000000019 /* CharlieWidget.swift */; };
-		OnboardingView_swift_AA0000000000000022 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = OnboardingView_swift_REF0000000022 /* OnboardingView.swift */; };
-		Briefing_swift_AA0000000000000028 /* Briefing.swift in Sources */ = {isa = PBXBuildFile; fileRef = Briefing_swift_REF0000000028 /* Briefing.swift */; };
-		PlaceSearchView_swift_AA0000000000000029 /* PlaceSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = PlaceSearchView_swift_REF0000000029 /* PlaceSearchView.swift */; };
-		MorningBriefingView_swift_AA0000000000000030 /* MorningBriefingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = MorningBriefingView_swift_REF0000000030 /* MorningBriefingView.swift */; };
-		MapKit_framework_REF0000000001 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = MapKit_framework_REF0000000002 /* MapKit.framework */; };
-		Security_framework_REF0000000014 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = Security_framework_REF0000000015 /* Security.framework */; };
+		531173CDFA0F9C9C8AA1C9D7 /* CharlieApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ABDF0E740982F5021171D53 /* CharlieApp.swift */; };
+		F0AA37D984C57196FAAA34FE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC574B17BDA0B121A2B59117 /* ContentView.swift */; };
+		6F5F441A175FB8ABB0866578 /* LaunchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01C44137E697C2ACA72BF54 /* LaunchScreen.swift */; };
+		48676F14D9E2FDA2BAE9CE42 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F39188E739D8C3567C945CE /* ChatView.swift */; };
+		C783BC9DD3E033B20D93840D /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9E29AA4E37D210B3E45DC3 /* APIClient.swift */; };
+		315F53ABA5490C0BA4D5A59C /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BD3AD03A651047AB4E641F8 /* AuthManager.swift */; };
+		536BDC9DBA8303E9AB1F160E /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965533A8CDF5466BCC41DE00 /* NotificationManager.swift */; };
+		A03AE575D5F81E539A524AEB /* HapticManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2398A62E13CB4C52CCF7239 /* HapticManager.swift */; };
+		8BF165C6AB6C42738C7AD4D8 /* AnimationConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D6B3EC22B797C5FAE23A2A /* AnimationConstants.swift */; };
+		59CAC34F249BB287C613903E /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE30260FA5F1F14CE98BB84 /* ColorExtensions.swift */; };
+		6F7B6D5F5BAC3D5CE2C53A34 /* ShareButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719DC8C1883B7DAF966CA5BC /* ShareButton.swift */; };
+		7938C7507B2A47CCA202D489 /* DiskCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128AA9AD36B5A41C8B3B2395 /* DiskCache.swift */; };
+		0FAD15B77CA4F6065085CFE9 /* Briefing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE7DF999D61394D4ED5A83F /* Briefing.swift */; };
+		FDC5BD1C5F1E089B927BC1B2 /* ChatMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A8C10E2826EBFB1C4F94D7 /* ChatMessage.swift */; };
+		BD05B4055E11D0770F4C0B8C /* Companion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB528818522990D332BED6B /* Companion.swift */; };
+		8E04AD85AAFF6DED3BA50CF7 /* Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98CE3D41655D1D050C810BB4 /* Context.swift */; };
+		A9FCBA884F6D536D888D474A /* Discovery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C80ECBDE40C07F4371C4985 /* Discovery.swift */; };
+		B4CEBE4A9CEF337FF17E3412 /* PlaceCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E062CA85168AFB44B7CBD391 /* PlaceCard.swift */; };
+		8F8C956A12281D24F32079E9 /* TriageState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359AAE87FD5AC9962E4BD63C /* TriageState.swift */; };
+		10C1C4D9051F07EBA12F958C /* UserManifest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BC4987A55C4BA183518C15 /* UserManifest.swift */; };
+		22C60C0CBDFE63C593AED2E1 /* DiscoveryStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3949274939E833D9F252F85D /* DiscoveryStore.swift */; };
+		C0BDC04E9CC33165468C1E43 /* TriageStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D68887F9AAA573C3DF2904 /* TriageStore.swift */; };
+		42B0CD92FB9DB5C6846B97F6 /* CharlieIntents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF204E1211A42DB8B2C1BC8 /* CharlieIntents.swift */; };
+		A31F63531A0B8F86C233B6DD /* ContextSwitcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEE7E349EA98D387175BACE /* ContextSwitcher.swift */; };
+		861546DD833417AC45127CF2 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3803F9EC56CE8880F099E15 /* MapView.swift */; };
+		51FA298C2E97E8ADCD448132 /* MorningBriefingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE2967656F235FE582C56A2 /* MorningBriefingView.swift */; };
+		ECF677048952E10C22FF6DDC /* OfflineBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C35E588C8752B8F8E3189FF /* OfflineBanner.swift */; };
+		F0BA940391FA784F65BCA166 /* PlaceBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2989ECD613AC9F30F00FC16B /* PlaceBottomSheet.swift */; };
+		8E3AE620B19CB48E79C179B7 /* PlacePinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D7E84EF75CF0E729C6682C /* PlacePinView.swift */; };
+		4E94532563CB2292F883CF9A /* PlaceSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9010706635E43941FCFCD438 /* PlaceSearchView.swift */; };
+		2A46C74221A2D2E916B8F5A4 /* RouteOverlayManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5688DF28C8D95D4F90ADD8F /* RouteOverlayManager.swift */; };
+		591C6EAC174FE711E2B4A6C9 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14F5D7CBCA8A43A642DF479 /* OnboardingView.swift */; };
+		D3ACAE83BC08F15280B5E1D7 /* AccommodationDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A09DD252343415708AF5254 /* AccommodationDetailView.swift */; };
+		4DD111266707DA77678A015C /* LookAroundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9562B0DE11FAEA01C4480C35 /* LookAroundButton.swift */; };
+		E266A1774585788255F2004A /* PlaceCardDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C97A98F0C30D18F7D850B18 /* PlaceCardDetailView.swift */; };
+		A0720EC566AF898D8EF86433 /* ReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9089F914254939E64A9F59 /* ReviewView.swift */; };
+		07EF0AF29471EEEA407095B7 /* CompanionAvatarStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DFF1F21E37817F8A5EBE56C /* CompanionAvatarStack.swift */; };
+		DF899B187087DA02D4DD889C /* CompanionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517623C885B0B3BEC6EBF450 /* CompanionView.swift */; };
+		F4C716800E779CD0D6485021 /* ContextManagementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18D4A13D438475237436A6E /* ContextManagementView.swift */; };
+		606F8EAB26791104C3956930 /* FlightCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0641B4891A3D00DB7C3D718 /* FlightCardView.swift */; };
+		E226B0C8FF79C4BDE1AE23C9 /* TripView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA6A3F988B56798318BD798 /* TripView.swift */; };
+		7EDBE2B1CAE00BC1388B5051 /* CharlieWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BF7619D1F15C24ACAAC32D /* CharlieWidget.swift */; };
+		DF0F152A018B6A314FD944F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91117CC9CC1EC0288D3B1CDD /* Assets.xcassets */; };
+		B2568FD3C8D5F78DDCAB7F54 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 275619BFD4BA8F3313345CC0 /* MapKit.framework */; };
+		2D683FE689DDA3E3B9405E8F /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8709FE22C2883599720AFE1F /* Security.framework */; };
+		ACB4D0E30D0683225A284AC9 /* WidgetKit.framework in Frameworks (Widget) */ = {isa = PBXBuildFile; fileRef = 6271CD35568DBB6F76CA71CD /* WidgetKit.framework */; };
+		B649B622E62F6538A6F31B52 /* SwiftUI.framework in Frameworks (Widget) */ = {isa = PBXBuildFile; fileRef = 941DBE52C10FEF7AEAB8C061 /* SwiftUI.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		CharlieApp_swift_REF0000000001 /* CharlieApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharlieApp.swift; sourceTree = "<group>"; };
-		ContentView_swift_REF0000000002 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		Discovery_swift_REF0000000003 /* Discovery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Discovery.swift; sourceTree = "<group>"; };
-		Context_swift_REF0000000004 /* Context.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Context.swift; sourceTree = "<group>"; };
-		TriageState_swift_REF0000000005 /* TriageState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriageState.swift; sourceTree = "<group>"; };
-		APIClient_swift_REF0000000006 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
-		AuthManager_swift_REF0000000007 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
-		MapView_swift_REF0000000008 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
-		ContextSwitcher_swift_REF0000000009 /* ContextSwitcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContextSwitcher.swift; sourceTree = "<group>"; };
-		PlaceBottomSheet_swift_REF0000000010 /* PlaceBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceBottomSheet.swift; sourceTree = "<group>"; };
-		Charlie_InfoPlist_REF0000000011 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		Charlie_Product_REF0000000012 /* Charlie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Charlie.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		MapKit_framework_REF0000000002 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		Security_framework_REF0000000015 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		PlaceCard_swift_REF0000000011 /* PlaceCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceCard.swift; sourceTree = "<group>"; };
-		UserManifest_swift_REF0000000012 /* UserManifest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManifest.swift; sourceTree = "<group>"; };
-		DiscoveryStore_swift_REF0000000013 /* DiscoveryStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryStore.swift; sourceTree = "<group>"; };
-		PlacePinView_swift_REF0000000014 /* PlacePinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacePinView.swift; sourceTree = "<group>"; };
-		LookAroundButton_swift_REF0000000015 /* LookAroundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookAroundButton.swift; sourceTree = "<group>"; };
-		RouteOverlayManager_swift_REF0000000016 /* RouteOverlayManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteOverlayManager.swift; sourceTree = "<group>"; };
-		CharlieIntents_swift_REF0000000017 /* CharlieIntents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharlieIntents.swift; sourceTree = "<group>"; };
-		NotificationManager_swift_REF0000000018 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
-		CharlieWidget_swift_REF0000000019 /* CharlieWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharlieWidget.swift; sourceTree = "<group>"; };
-		OnboardingView_swift_REF0000000022 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
-		CharlieWidget_InfoPlist_REF0000000020 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CharlieWidget_Product_REF0000000021 /* CharlieWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = CharlieWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		Briefing_swift_REF0000000028 /* Briefing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Briefing.swift; sourceTree = "<group>"; };
-		PlaceSearchView_swift_REF0000000029 /* PlaceSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceSearchView.swift; sourceTree = "<group>"; };
-		MorningBriefingView_swift_REF0000000030 /* MorningBriefingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MorningBriefingView.swift; sourceTree = "<group>"; };
+		4ABDF0E740982F5021171D53 /* CharlieApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharlieApp.swift; sourceTree = "<group>"; };
+		FC574B17BDA0B121A2B59117 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		B01C44137E697C2ACA72BF54 /* LaunchScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreen.swift; sourceTree = "<group>"; };
+		9F39188E739D8C3567C945CE /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
+		AC9E29AA4E37D210B3E45DC3 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		6BD3AD03A651047AB4E641F8 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		965533A8CDF5466BCC41DE00 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		B2398A62E13CB4C52CCF7239 /* HapticManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticManager.swift; sourceTree = "<group>"; };
+		78D6B3EC22B797C5FAE23A2A /* AnimationConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationConstants.swift; sourceTree = "<group>"; };
+		8AE30260FA5F1F14CE98BB84 /* ColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtensions.swift; sourceTree = "<group>"; };
+		719DC8C1883B7DAF966CA5BC /* ShareButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareButton.swift; sourceTree = "<group>"; };
+		128AA9AD36B5A41C8B3B2395 /* DiskCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskCache.swift; sourceTree = "<group>"; };
+		4AE7DF999D61394D4ED5A83F /* Briefing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Briefing.swift; sourceTree = "<group>"; };
+		77A8C10E2826EBFB1C4F94D7 /* ChatMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessage.swift; sourceTree = "<group>"; };
+		8EB528818522990D332BED6B /* Companion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Companion.swift; sourceTree = "<group>"; };
+		98CE3D41655D1D050C810BB4 /* Context.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Context.swift; sourceTree = "<group>"; };
+		5C80ECBDE40C07F4371C4985 /* Discovery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Discovery.swift; sourceTree = "<group>"; };
+		E062CA85168AFB44B7CBD391 /* PlaceCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceCard.swift; sourceTree = "<group>"; };
+		359AAE87FD5AC9962E4BD63C /* TriageState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriageState.swift; sourceTree = "<group>"; };
+		31BC4987A55C4BA183518C15 /* UserManifest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManifest.swift; sourceTree = "<group>"; };
+		3949274939E833D9F252F85D /* DiscoveryStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryStore.swift; sourceTree = "<group>"; };
+		66D68887F9AAA573C3DF2904 /* TriageStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriageStore.swift; sourceTree = "<group>"; };
+		9FF204E1211A42DB8B2C1BC8 /* CharlieIntents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharlieIntents.swift; sourceTree = "<group>"; };
+		3FEE7E349EA98D387175BACE /* ContextSwitcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContextSwitcher.swift; sourceTree = "<group>"; };
+		B3803F9EC56CE8880F099E15 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		FBE2967656F235FE582C56A2 /* MorningBriefingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MorningBriefingView.swift; sourceTree = "<group>"; };
+		2C35E588C8752B8F8E3189FF /* OfflineBanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflineBanner.swift; sourceTree = "<group>"; };
+		2989ECD613AC9F30F00FC16B /* PlaceBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceBottomSheet.swift; sourceTree = "<group>"; };
+		B4D7E84EF75CF0E729C6682C /* PlacePinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacePinView.swift; sourceTree = "<group>"; };
+		9010706635E43941FCFCD438 /* PlaceSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceSearchView.swift; sourceTree = "<group>"; };
+		E5688DF28C8D95D4F90ADD8F /* RouteOverlayManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteOverlayManager.swift; sourceTree = "<group>"; };
+		D14F5D7CBCA8A43A642DF479 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		9A09DD252343415708AF5254 /* AccommodationDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccommodationDetailView.swift; sourceTree = "<group>"; };
+		9562B0DE11FAEA01C4480C35 /* LookAroundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookAroundButton.swift; sourceTree = "<group>"; };
+		6C97A98F0C30D18F7D850B18 /* PlaceCardDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceCardDetailView.swift; sourceTree = "<group>"; };
+		FD9089F914254939E64A9F59 /* ReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewView.swift; sourceTree = "<group>"; };
+		6DFF1F21E37817F8A5EBE56C /* CompanionAvatarStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanionAvatarStack.swift; sourceTree = "<group>"; };
+		517623C885B0B3BEC6EBF450 /* CompanionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanionView.swift; sourceTree = "<group>"; };
+		F18D4A13D438475237436A6E /* ContextManagementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContextManagementView.swift; sourceTree = "<group>"; };
+		F0641B4891A3D00DB7C3D718 /* FlightCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightCardView.swift; sourceTree = "<group>"; };
+		0CA6A3F988B56798318BD798 /* TripView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripView.swift; sourceTree = "<group>"; };
+		B4BF7619D1F15C24ACAAC32D /* CharlieWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharlieWidget.swift; sourceTree = "<group>"; };
+		F70B4FE53F197731A234F51F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		762065299A76A5DFE095C2BA /* Info.plist (Widget) */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4DEC05EE53EBCE0785DA1237 /* Charlie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Charlie.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F09F0DEB1A4911CDD1770DB8 /* CharlieWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = CharlieWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		91117CC9CC1EC0288D3B1CDD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		275619BFD4BA8F3313345CC0 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		8709FE22C2883599720AFE1F /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		6271CD35568DBB6F76CA71CD /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		941DBE52C10FEF7AEAB8C061 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		Charlie_Frameworks_REF0000000013 /* Frameworks */ = {
+		009ACC080178E054B1494528 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				MapKit_framework_REF0000000001 /* MapKit.framework in Frameworks */,
-				Security_framework_REF0000000014 /* Security.framework in Frameworks */,
+				B2568FD3C8D5F78DDCAB7F54 /* MapKit.framework in Frameworks */,
+				2D683FE689DDA3E3B9405E8F /* Security.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		86A81E4EB3EEDBC3E26A058B /* Frameworks (Widget) */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ACB4D0E30D0683225A284AC9 /* WidgetKit.framework in Frameworks */,
+				B649B622E62F6538A6F31B52 /* SwiftUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		Charlie_RootGroup_REF0000000014 /* Root */ = {
+		50D9D00AFDBE61DFAF258993 = {
 			isa = PBXGroup;
 			children = (
-				Charlie_Group_REF0000000015 /* Charlie */,
-				CharlieWidget_Group_REF0000000026 /* CharlieWidget */,
-				Charlie_xcodeproj_Group_REF0000000016 /* Charlie.xcodeproj */,
-				Charlie_Products_Group_REF0000000017 /* Products */,
+				73BD6CF7C4836C873634D3D2 /* Charlie */,
+				974229C0165B57C78D2F57C1 /* CharlieWidget */,
+				B879358E0122ADB25F226773 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		Charlie_Group_REF0000000015 /* Charlie */ = {
+		B879358E0122ADB25F226773 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CharlieApp_swift_REF0000000001 /* CharlieApp.swift */,
-				ContentView_swift_REF0000000002 /* ContentView.swift */,
-				Charlie_InfoPlist_REF0000000011 /* Info.plist */,
-				Charlie_Core_Group_REF0000000018 /* Core */,
-				Charlie_Map_Group_REF0000000019 /* Map */,
-				Charlie_Onboarding_Group_REF0000000027 /* Onboarding */,
-				Charlie_Intents_Group_REF0000000024 /* Intents */,
+				4DEC05EE53EBCE0785DA1237 /* Charlie.app */,
+				F09F0DEB1A4911CDD1770DB8 /* CharlieWidgetExtension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		73BD6CF7C4836C873634D3D2 /* Charlie */ = {
+			isa = PBXGroup;
+			children = (
+				4ABDF0E740982F5021171D53 /* CharlieApp.swift */,
+				FC574B17BDA0B121A2B59117 /* ContentView.swift */,
+				B01C44137E697C2ACA72BF54 /* LaunchScreen.swift */,
+				F70B4FE53F197731A234F51F /* Info.plist */,
+				91117CC9CC1EC0288D3B1CDD /* Assets.xcassets */,
+				2773164ED1617AEE4AFD8C20 /* Chat */,
+				7E63FB79D8432E92B2BF05B7 /* Core */,
+				C4584D61B24DEF17067C7742 /* Intents */,
+				530F9EC2082920D58220B34C /* Map */,
+				1AE61FC03E8AFBBFEC24A79E /* Onboarding */,
+				C4C05D4582D46FE2D9E6B09E /* PlaceCard */,
+				1763645F43944F91EB5D691D /* Review */,
+				933E67A907DC545E25DD869A /* Trips */,
 			);
 			path = Charlie;
 			sourceTree = "<group>";
 		};
-		Charlie_Core_Group_REF0000000018 /* Core */ = {
+		2773164ED1617AEE4AFD8C20 /* Chat */ = {
 			isa = PBXGroup;
 			children = (
-				Charlie_Core_APIClient_REF0000000020 /* APIClient.swift */,
-				Charlie_Core_AuthManager_REF0000000021 /* AuthManager.swift */,
-				Charlie_Core_Store_Group_REF0000000023 /* Store */,
-				Charlie_Core_Models_Group_REF0000000022 /* Models */,
-				NotificationManager_swift_REF0000000018 /* NotificationManager.swift */,
+				9F39188E739D8C3567C945CE /* ChatView.swift */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
+		7E63FB79D8432E92B2BF05B7 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				AC9E29AA4E37D210B3E45DC3 /* APIClient.swift */,
+				6BD3AD03A651047AB4E641F8 /* AuthManager.swift */,
+				965533A8CDF5466BCC41DE00 /* NotificationManager.swift */,
+				B2398A62E13CB4C52CCF7239 /* HapticManager.swift */,
+				78D6B3EC22B797C5FAE23A2A /* AnimationConstants.swift */,
+				8AE30260FA5F1F14CE98BB84 /* ColorExtensions.swift */,
+				719DC8C1883B7DAF966CA5BC /* ShareButton.swift */,
+				128AA9AD36B5A41C8B3B2395 /* DiskCache.swift */,
+				BC8E6A5FDB0FEE50AF1B10E7 /* Models */,
+				1184CC4D230449BD5B010B55 /* Store */,
 			);
 			path = Core;
 			sourceTree = "<group>";
 		};
-		Charlie_Core_Store_Group_REF0000000023 /* Store */ = {
+		BC8E6A5FDB0FEE50AF1B10E7 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				DiscoveryStore_swift_REF0000000013 /* DiscoveryStore.swift */,
-			);
-			path = Store;
-			sourceTree = "<group>";
-		};
-		Charlie_Core_Models_Group_REF0000000022 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				Discovery_swift_REF0000000003 /* Discovery.swift */,
-				Context_swift_REF0000000004 /* Context.swift */,
-				TriageState_swift_REF0000000005 /* TriageState.swift */,
-				PlaceCard_swift_REF0000000011 /* PlaceCard.swift */,
-				UserManifest_swift_REF0000000012 /* UserManifest.swift */,
-				Briefing_swift_REF0000000028 /* Briefing.swift */,
+				4AE7DF999D61394D4ED5A83F /* Briefing.swift */,
+				77A8C10E2826EBFB1C4F94D7 /* ChatMessage.swift */,
+				8EB528818522990D332BED6B /* Companion.swift */,
+				98CE3D41655D1D050C810BB4 /* Context.swift */,
+				5C80ECBDE40C07F4371C4985 /* Discovery.swift */,
+				E062CA85168AFB44B7CBD391 /* PlaceCard.swift */,
+				359AAE87FD5AC9962E4BD63C /* TriageState.swift */,
+				31BC4987A55C4BA183518C15 /* UserManifest.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
 		};
-		Charlie_Core_APIClient_REF0000000020 /* APIClient.swift */ = {
+		1184CC4D230449BD5B010B55 /* Store */ = {
 			isa = PBXGroup;
 			children = (
-				APIClient_swift_REF0000000006 /* APIClient.swift */,
+				3949274939E833D9F252F85D /* DiscoveryStore.swift */,
+				66D68887F9AAA573C3DF2904 /* TriageStore.swift */,
 			);
-			path = APIClient.swift;
+			path = Store;
 			sourceTree = "<group>";
 		};
-		Charlie_Core_AuthManager_REF0000000021 /* AuthManager.swift */ = {
+		C4584D61B24DEF17067C7742 /* Intents */ = {
 			isa = PBXGroup;
 			children = (
-				AuthManager_swift_REF0000000007 /* AuthManager.swift */,
-			);
-			path = AuthManager.swift;
-			sourceTree = "<group>";
-		};
-		Charlie_Map_Group_REF0000000019 /* Map */ = {
-			isa = PBXGroup;
-			children = (
-				MapView_swift_REF0000000008 /* MapView.swift */,
-				ContextSwitcher_swift_REF0000000009 /* ContextSwitcher.swift */,
-				PlaceBottomSheet_swift_REF0000000010 /* PlaceBottomSheet.swift */,
-				PlacePinView_swift_REF0000000014 /* PlacePinView.swift */,
-				LookAroundButton_swift_REF0000000015 /* LookAroundButton.swift */,
-				RouteOverlayManager_swift_REF0000000016 /* RouteOverlayManager.swift */,
-				PlaceSearchView_swift_REF0000000029 /* PlaceSearchView.swift */,
-				MorningBriefingView_swift_REF0000000030 /* MorningBriefingView.swift */,
-			);
-			path = Map;
-			sourceTree = "<group>";
-		};
-		Charlie_Intents_Group_REF0000000025 /* Intents */ = {
-			isa = PBXGroup;
-			children = (
-				CharlieIntents_swift_REF0000000017 /* CharlieIntents.swift */,
+				9FF204E1211A42DB8B2C1BC8 /* CharlieIntents.swift */,
 			);
 			path = Intents;
 			sourceTree = "<group>";
 		};
-		CharlieWidget_Group_REF0000000026 /* CharlieWidget */ = {
+		530F9EC2082920D58220B34C /* Map */ = {
 			isa = PBXGroup;
 			children = (
-				CharlieWidget_swift_REF0000000019 /* CharlieWidget.swift */,
-				CharlieWidget_InfoPlist_REF0000000020 /* Info.plist */,
+				3FEE7E349EA98D387175BACE /* ContextSwitcher.swift */,
+				B3803F9EC56CE8880F099E15 /* MapView.swift */,
+				FBE2967656F235FE582C56A2 /* MorningBriefingView.swift */,
+				2C35E588C8752B8F8E3189FF /* OfflineBanner.swift */,
+				2989ECD613AC9F30F00FC16B /* PlaceBottomSheet.swift */,
+				B4D7E84EF75CF0E729C6682C /* PlacePinView.swift */,
+				9010706635E43941FCFCD438 /* PlaceSearchView.swift */,
+				E5688DF28C8D95D4F90ADD8F /* RouteOverlayManager.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		1AE61FC03E8AFBBFEC24A79E /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				D14F5D7CBCA8A43A642DF479 /* OnboardingView.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		C4C05D4582D46FE2D9E6B09E /* PlaceCard */ = {
+			isa = PBXGroup;
+			children = (
+				9A09DD252343415708AF5254 /* AccommodationDetailView.swift */,
+				9562B0DE11FAEA01C4480C35 /* LookAroundButton.swift */,
+				6C97A98F0C30D18F7D850B18 /* PlaceCardDetailView.swift */,
+			);
+			path = PlaceCard;
+			sourceTree = "<group>";
+		};
+		1763645F43944F91EB5D691D /* Review */ = {
+			isa = PBXGroup;
+			children = (
+				FD9089F914254939E64A9F59 /* ReviewView.swift */,
+			);
+			path = Review;
+			sourceTree = "<group>";
+		};
+		933E67A907DC545E25DD869A /* Trips */ = {
+			isa = PBXGroup;
+			children = (
+				6DFF1F21E37817F8A5EBE56C /* CompanionAvatarStack.swift */,
+				517623C885B0B3BEC6EBF450 /* CompanionView.swift */,
+				F18D4A13D438475237436A6E /* ContextManagementView.swift */,
+				F0641B4891A3D00DB7C3D718 /* FlightCardView.swift */,
+				0CA6A3F988B56798318BD798 /* TripView.swift */,
+			);
+			path = Trips;
+			sourceTree = "<group>";
+		};
+		974229C0165B57C78D2F57C1 /* CharlieWidget */ = {
+			isa = PBXGroup;
+			children = (
+				B4BF7619D1F15C24ACAAC32D /* CharlieWidget.swift */,
+				762065299A76A5DFE095C2BA /* Info.plist */,
 			);
 			path = CharlieWidget;
-			sourceTree = "<group>";
-		};
-		Charlie_xcodeproj_Group_REF0000000016 /* Charlie.xcodeproj */ = {
-			isa = PBXGroup;
-			children = (
-				Charlie_xcodeproj_Project REF0000000023 /* project.pbxproj */,
-			);
-			path = Charlie.xcodeproj;
-			sourceTree = "<group>";
-		};
-		Charlie_Products_Group_REF0000000017 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				Charlie_Product_REF0000000012 /* Charlie.app */,
-			);
-			path = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		Charlie_Target_REF0000000024 /* Charlie */ = {
+		580B7883F50C917A4816110D /* Charlie */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = Charlie_BuildConfigList_REF0000000025 /* Build configuration list for PBXNativeTarget "Charlie" */;
+			buildConfigurationList = B65B39E90D3F1CD5CC25D2F4 /* Build configuration list for PBXNativeTarget "Charlie" */;
 			buildPhases = (
-				Charlie_Sources_Phase_REF0000000026 /* Sources */,
-				Charlie_Frameworks_REF0000000013 /* Frameworks */,
-				Charlie_Resources_Phase_REF0000000027 /* Resources */,
+				06FED1CA8ED87504A365B397 /* Sources */,
+				009ACC080178E054B1494528 /* Frameworks */,
+				BD25F5599F707AEA9526EBF5 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = Charlie;
+			packageProductDependencies = (
+			);
 			productName = Charlie;
-			productReference = Charlie_Product_REF0000000012 /* Charlie.app */;
+			productReference = 4DEC05EE53EBCE0785DA1237 /* Charlie.app */;
 			productType = "com.apple.product-type.application";
 		};
-		CharlieWidget_Target_REF0000000027 /* CharlieWidget */ = {
+		D470F90A0434B13142EB86D3 /* CharlieWidget */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CharlieWidget_BuildConfigList_REF0000000028 /* Build configuration list for PBXNativeTarget "CharlieWidget" */;
+			buildConfigurationList = 48407EBE667DA3AADBC8BC7F /* Build configuration list for PBXNativeTarget "CharlieWidget" */;
 			buildPhases = (
-				CharlieWidget_Sources_Phase_REF0000000029 /* Sources */,
-				CharlieWidget_Frameworks_Phase_REF0000000030 /* Frameworks */,
-				CharlieWidget_Resources_Phase_REF0000000031 /* Resources */,
+				3E1192EC7DE06B3F0685B83C /* Sources */,
+				86A81E4EB3EEDBC3E26A058B /* Frameworks */,
+				186BAB963867CB5C0C905E6A /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = CharlieWidget;
-			productName = CharlieWidgetExtension;
-			productReference = CharlieWidget_Product_REF0000000021 /* CharlieWidgetExtension.appex */;
+			productName = CharlieWidget;
+			productReference = F09F0DEB1A4911CDD1770DB8 /* CharlieWidgetExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		Charlie_Project_REF0000000028 /* Project object */ = {
+		EDBDE123A0FD5BE83E6C613E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1500;
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
-					Charlie_Target_REF0000000024 = {
+					580B7883F50C917A4816110D = {
 						CreatedOnToolsVersion = 15.0;
 					};
-					CharlieWidget_Target_REF0000000027 = {
+					D470F90A0434B13142EB86D3 = {
 						CreatedOnToolsVersion = 15.0;
 					};
 				};
 			};
-			buildConfigurationList = Charlie_Project_BuildConfigList_REF0000000029 /* Build configuration list for PBXProject "Charlie" */;
+			buildConfigurationList = FEEA668B833B084BC9C1EC1B /* Build configuration list for PBXProject "Charlie" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -263,19 +354,27 @@
 				en,
 				Base,
 			);
-			mainGroup = Charlie_RootGroup_REF0000000014 /* Root */;
-			productRefGroup = Charlie_Products_Group_REF0000000017 /* Products */;
+			mainGroup = 50D9D00AFDBE61DFAF258993;
+			productRefGroup = B879358E0122ADB25F226773 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				Charlie_Target_REF0000000024 /* Charlie */,
-				CharlieWidget_Target_REF0000000027 /* CharlieWidget */,
+				580B7883F50C917A4816110D /* Charlie */,
+				D470F90A0434B13142EB86D3 /* CharlieWidget */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		Charlie_Resources_Phase_REF0000000027 /* Resources */ = {
+		BD25F5599F707AEA9526EBF5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DF0F152A018B6A314FD944F6 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		186BAB963867CB5C0C905E6A /* Resources (Widget) */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -284,329 +383,226 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXSourcesBuildPhase section */
-		Charlie_Sources_Phase_REF0000000026 /* Sources */ = {
+		06FED1CA8ED87504A365B397 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CharlieApp_swift_AA0000000000000001 /* CharlieApp.swift in Sources */,
-				ContentView_swift_AA0000000000000002 /* ContentView.swift in Sources */,
-				Discovery_swift_AA0000000000000003 /* Discovery.swift in Sources */,
-				Context_swift_AA0000000000000004 /* Context.swift in Sources */,
-				TriageState_swift_AA0000000000000005 /* TriageState.swift in Sources */,
-				APIClient_swift_AA0000000000000006 /* APIClient.swift in Sources */,
-				AuthManager_swift_AA0000000000000007 /* AuthManager.swift in Sources */,
-				MapView_swift_AA0000000000000008 /* MapView.swift in Sources */,
-				ContextSwitcher_swift_AA0000000000000009 /* ContextSwitcher.swift in Sources */,
-				PlaceBottomSheet_swift_AA0000000000000010 /* PlaceBottomSheet.swift in Sources */,
-				PlaceCard_swift_AA0000000000000011 /* PlaceCard.swift in Sources */,
-				UserManifest_swift_AA0000000000000012 /* UserManifest.swift in Sources */,
-				DiscoveryStore_swift_AA0000000000000013 /* DiscoveryStore.swift in Sources */,
-				PlacePinView_swift_AA0000000000000014 /* PlacePinView.swift in Sources */,
-				LookAroundButton_swift_AA0000000000000015 /* LookAroundButton.swift in Sources */,
-				RouteOverlayManager_swift_AA0000000000000016 /* RouteOverlayManager.swift in Sources */,
-				CharlieIntents_swift_AA0000000000000017 /* CharlieIntents.swift in Sources */,
-				NotificationManager_swift_AA0000000000000018 /* NotificationManager.swift in Sources */,
-				OnboardingView_swift_AA0000000000000022 /* OnboardingView.swift in Sources */,
-				Briefing_swift_AA0000000000000028 /* Briefing.swift in Sources */,
-				PlaceSearchView_swift_AA0000000000000029 /* PlaceSearchView.swift in Sources */,
-				MorningBriefingView_swift_AA0000000000000030 /* MorningBriefingView.swift in Sources */,
+				531173CDFA0F9C9C8AA1C9D7 /* CharlieApp.swift in Sources */,
+				F0AA37D984C57196FAAA34FE /* ContentView.swift in Sources */,
+				6F5F441A175FB8ABB0866578 /* LaunchScreen.swift in Sources */,
+				48676F14D9E2FDA2BAE9CE42 /* ChatView.swift in Sources */,
+				C783BC9DD3E033B20D93840D /* APIClient.swift in Sources */,
+				315F53ABA5490C0BA4D5A59C /* AuthManager.swift in Sources */,
+				536BDC9DBA8303E9AB1F160E /* NotificationManager.swift in Sources */,
+				A03AE575D5F81E539A524AEB /* HapticManager.swift in Sources */,
+				8BF165C6AB6C42738C7AD4D8 /* AnimationConstants.swift in Sources */,
+				59CAC34F249BB287C613903E /* ColorExtensions.swift in Sources */,
+				6F7B6D5F5BAC3D5CE2C53A34 /* ShareButton.swift in Sources */,
+				7938C7507B2A47CCA202D489 /* DiskCache.swift in Sources */,
+				0FAD15B77CA4F6065085CFE9 /* Briefing.swift in Sources */,
+				FDC5BD1C5F1E089B927BC1B2 /* ChatMessage.swift in Sources */,
+				BD05B4055E11D0770F4C0B8C /* Companion.swift in Sources */,
+				8E04AD85AAFF6DED3BA50CF7 /* Context.swift in Sources */,
+				A9FCBA884F6D536D888D474A /* Discovery.swift in Sources */,
+				B4CEBE4A9CEF337FF17E3412 /* PlaceCard.swift in Sources */,
+				8F8C956A12281D24F32079E9 /* TriageState.swift in Sources */,
+				10C1C4D9051F07EBA12F958C /* UserManifest.swift in Sources */,
+				22C60C0CBDFE63C593AED2E1 /* DiscoveryStore.swift in Sources */,
+				C0BDC04E9CC33165468C1E43 /* TriageStore.swift in Sources */,
+				42B0CD92FB9DB5C6846B97F6 /* CharlieIntents.swift in Sources */,
+				A31F63531A0B8F86C233B6DD /* ContextSwitcher.swift in Sources */,
+				861546DD833417AC45127CF2 /* MapView.swift in Sources */,
+				51FA298C2E97E8ADCD448132 /* MorningBriefingView.swift in Sources */,
+				ECF677048952E10C22FF6DDC /* OfflineBanner.swift in Sources */,
+				F0BA940391FA784F65BCA166 /* PlaceBottomSheet.swift in Sources */,
+				8E3AE620B19CB48E79C179B7 /* PlacePinView.swift in Sources */,
+				4E94532563CB2292F883CF9A /* PlaceSearchView.swift in Sources */,
+				2A46C74221A2D2E916B8F5A4 /* RouteOverlayManager.swift in Sources */,
+				591C6EAC174FE711E2B4A6C9 /* OnboardingView.swift in Sources */,
+				D3ACAE83BC08F15280B5E1D7 /* AccommodationDetailView.swift in Sources */,
+				4DD111266707DA77678A015C /* LookAroundButton.swift in Sources */,
+				E266A1774585788255F2004A /* PlaceCardDetailView.swift in Sources */,
+				A0720EC566AF898D8EF86433 /* ReviewView.swift in Sources */,
+				07EF0AF29471EEEA407095B7 /* CompanionAvatarStack.swift in Sources */,
+				DF899B187087DA02D4DD889C /* CompanionView.swift in Sources */,
+				F4C716800E779CD0D6485021 /* ContextManagementView.swift in Sources */,
+				606F8EAB26791104C3956930 /* FlightCardView.swift in Sources */,
+				E226B0C8FF79C4BDE1AE23C9 /* TripView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-/* End PBXSourcesBuildPhase section */
-
-/* Begin PBXFrameworksBuildPhase section */
-		CharlieWidget_Frameworks_Phase_REF0000000030 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXFrameworksBuildPhase section */
-
-/* Begin PBXResourcesBuildPhase section */
-		CharlieWidget_Resources_Phase_REF0000000031 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXResourcesBuildPhase section */
-
-/* Begin PBXSourcesBuildPhase section */
-		CharlieWidget_Sources_Phase_REF0000000029 /* Sources */ = {
+		3E1192EC7DE06B3F0685B83C /* Sources (Widget) */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CharlieWidget_swift_AA0000000000000019 /* CharlieWidget.swift in Sources */,
+				7EDBE2B1CAE00BC1388B5051 /* CharlieWidget.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		Charlie_Debug_Config_REF0000000030 /* Debug */ = {
+		C535B84E982E81134082251E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSET_CATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = Charlie/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
-				MTL_FAST_MATH = YES;
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = iphoneos;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.charlie.travel";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_TESTABILITY = YES;
+				ONLY_ACTIVE_ARCH = YES;
 			};
 			name = Debug;
 		};
-		Charlie_Release_Config_REF0000000031 /* Release */ = {
+		57AFD70409081960B1478F5B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSET_CATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = Charlie/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				MTL_FAST_MATH = YES;
-				SDKROOT = iphoneos;
-				SWIFT_COMPILATION_MODE = wholemodule;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.charlie.travel";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		Charlie_Target_Debug_Config_REF0000000032 /* Debug */ = {
+		12AFAF3E9E30A2981528FA02 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = NO;
-				INFOPLIST_FILE = Charlie/Info.plist;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = NO;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = NO;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Charlie uses your location to show nearby places";
-				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Charlie uses your location in the background to surface nearby places";
+				INFOPLIST_FILE = CharlieWidget/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.charlie.travel;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.charlie.travel.widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
-		Charlie_Target_Release_Config_REF0000000033 /* Release */ = {
+		690D6B985531A056B782B27F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = NO;
-				INFOPLIST_FILE = Charlie/Info.plist;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = NO;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = NO;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Charlie uses your location to show nearby places";
-				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Charlie uses your location in the background to surface nearby places";
+				INFOPLIST_FILE = CharlieWidget/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.charlie.travel;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.charlie.travel.widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
-		CharlieWidget_Debug_Config_REF0000000034 /* Debug */ = {
+		DDF18388A5A6BF12606AA040 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = NO;
-				INFOPLIST_FILE = CharlieWidget/Info.plist;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.charlie.travel.widget;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1";
+				SDKROOT = iphoneos;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_TESTABILITY = YES;
+				ONLY_ACTIVE_ARCH = YES;
 			};
 			name = Debug;
 		};
-		CharlieWidget_Release_Config_REF0000000035 /* Release */ = {
+		1818EAFC7212389B4B45BC12 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = NO;
-				INFOPLIST_FILE = CharlieWidget/Info.plist;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.charlie.travel.widget;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1";
+				SDKROOT = iphoneos;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		Charlie_Project_BuildConfigList_REF0000000029 /* Build configuration list for PBXProject "Charlie" */ = {
+		FEEA668B833B084BC9C1EC1B /* Build configuration list for PBXProject "Charlie" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				Charlie_Debug_Config_REF0000000030 /* Debug */,
-				Charlie_Release_Config_REF0000000031 /* Release */,
+				DDF18388A5A6BF12606AA040 /* Debug */,
+				1818EAFC7212389B4B45BC12 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		Charlie_BuildConfigList_REF0000000025 /* Build configuration list for PBXNativeTarget "Charlie" */ = {
+		B65B39E90D3F1CD5CC25D2F4 /* Build configuration list for PBXNativeTarget "Charlie" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				Charlie_Target_Debug_Config_REF0000000032 /* Debug */,
-				Charlie_Target_Release_Config_REF0000000033 /* Release */,
+				C535B84E982E81134082251E /* Debug */,
+				57AFD70409081960B1478F5B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CharlieWidget_BuildConfigList_REF0000000028 /* Build configuration list for PBXNativeTarget "CharlieWidget" */ = {
+		48407EBE667DA3AADBC8BC7F /* Build configuration list for PBXNativeTarget "CharlieWidget" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				CharlieWidget_Debug_Config_REF0000000034 /* Debug */,
-				CharlieWidget_Release_Config_REF0000000035 /* Release */,
+				12AFAF3E9E30A2981528FA02 /* Debug */,
+				690D6B985531A056B782B27F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
 	};
-	rootObject = Charlie_Project_REF0000000028 /* Project object */;
+	rootObject = EDBDE123A0FD5BE83E6C613E /* Project object */;
 }
