@@ -98,13 +98,15 @@ struct PlaceBottomSheet: View {
 // Type color gradient fallback for missing hero images
 struct TypeGradientView: View {
     let type: DiscoveryType
+    @Environment(\.colorScheme) var colorScheme
 
     var colors: [Color] {
+        let opacity: Double = colorScheme == .dark ? 0.5 : 0.7
         switch type {
-        case .restaurant, .bar, .cafe: return [.orange.opacity(0.7), .orange.opacity(0.3)]
-        case .gallery, .museum, .theatre, .musicVenue: return [.blue.opacity(0.7), .blue.opacity(0.3)]
-        case .accommodation, .hotel: return [.purple.opacity(0.7), .purple.opacity(0.3)]
-        default: return [.gray.opacity(0.5), .gray.opacity(0.2)]
+        case .restaurant, .bar, .cafe: return [.orange.opacity(opacity), .orange.opacity(opacity * 0.4)]
+        case .gallery, .museum, .theatre, .musicVenue: return [.blue.opacity(opacity), .blue.opacity(opacity * 0.4)]
+        case .accommodation, .hotel: return [.purple.opacity(opacity), .purple.opacity(opacity * 0.4)]
+        default: return [.gray.opacity(opacity), .gray.opacity(opacity * 0.4)]
         }
     }
 
