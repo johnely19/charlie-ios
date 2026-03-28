@@ -1,4 +1,5 @@
 import UserNotifications
+import UIKit
 import Foundation
 
 @MainActor
@@ -30,7 +31,7 @@ class NotificationManager: ObservableObject {
     // Schedule a trip reminder — fires 3 days before trip start
     func scheduleTripReminder(for context: Context) {
         guard isAuthorized else { return }
-        guard let datesString = context.dates else { return }
+        guard context.dates != nil else { return }
 
         // Try to extract a start date from dates string (simple heuristic)
         // For now, schedule 3 days from now as a placeholder trigger
