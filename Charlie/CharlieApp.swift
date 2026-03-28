@@ -10,11 +10,16 @@ struct CharlieApp: App {
 
     var body: some Scene {
         WindowGroup {
-            MapView()
-                .environment(discoveryStore)
-                .task {
-                    await NotificationManager.shared.requestPermission()
-                }
+            TabView {
+                MapView()
+                    .tabItem { Label("Map", systemImage: "map") }
+                ReviewView()
+                    .tabItem { Label("Review", systemImage: "checkmark.square") }
+            }
+            .environment(discoveryStore)
+            .task {
+                await NotificationManager.shared.requestPermission()
+            }
         }
     }
 }
