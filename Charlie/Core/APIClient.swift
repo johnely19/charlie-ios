@@ -190,6 +190,40 @@ actor APIClient {
         }
     }
 
+    // MARK: - Context Management
+
+    func createContext(type: ContextType, label: String, emoji: String, city: String?, dates: String?, focus: [String]) async throws {
+        struct Body: Codable {
+            let type: String
+            let label: String
+            let emoji: String
+            let city: String?
+            let dates: String?
+            let focus: [String]
+        }
+        let body = Body(type: type.rawValue, label: label, emoji: emoji, city: city, dates: dates, focus: focus)
+        var request = URLRequest(url: baseURL.appendingPathComponent("api/user/manifest/contexts"))
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        if let token = token { request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization") }
+        request.httpBody = try JSONEncoder().encode(body)
+        let (_, response) = try await URLSession.shared.data(for: request)
+        if let http = response as? HTTPURLResponse, http.statusCode == 404 {
+            // Endpoint may not exist yet — fail silently
+            return
+        }
+    }
+
+    func updateContext(key: String, label: String, emoji: String, dates: String?) async throws {
+        struct Body: Codable { let label: String; let emoji: String; let dates: String? }
+        var request = URLRequest(url: baseURL.appendingPathComponent("api/user/manifest/contexts/\(key)"))
+        request.httpMethod = "PATCH"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        if let token = token { request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization") }
+        request.httpBody = try JSONEncoder().encode(Body(label: label, emoji: emoji, dates: dates))
+        _ = try? await URLSession.shared.data(for: request) // best-effort
+    }
+
     // MARK: - Helpers
 
     private func authorizedRequest(url: URL, method: String) throws -> URLRequest {

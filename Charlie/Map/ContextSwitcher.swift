@@ -4,6 +4,7 @@ struct ContextSwitcher: View {
     @Bindable var store: DiscoveryStore
     var onChatTap: (() -> Void)?
     var onTripTap: (() -> Void)?
+    var onManageTap: (() -> Void)?
 
     var body: some View {
         HStack {
@@ -19,6 +20,12 @@ struct ContextSwitcher: View {
             .pickerStyle(.menu)
 
             Spacer()
+
+            if let onManageTap = onManageTap {
+                Button(action: onManageTap) {
+                    Image(systemName: "pencil.circle")
+                }
+            }
 
             if let onTripTap = onTripTap, store.activeContext?.type == .trip {
                 Button(action: onTripTap) {
