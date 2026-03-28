@@ -1,10 +1,11 @@
 import SwiftUI
 import MapKit
+import UIKit
 
 @Observable
 class DiscoveryStore {
     var discoveries: [Discovery] = []
-    var trieEntries: [String: TriageEntry] = [:] // keyed by discoveryId
+    var triageStore = TriageStore()
     var contexts: [Context] = []
     var activeContext: Context?
     var isLoading = false
@@ -12,11 +13,16 @@ class DiscoveryStore {
 
     var filteredDiscoveries: [Discovery] {
         guard let ctx = activeContext else { return discoveries }
-        return discoveries.filter { $0.contextKey == ctx.key }
+        return discoveries.filter { discovery in
+            guard discovery.contextKey == ctx.key else { return false }
+            let state = triageStore.state(for: discovery.id, in: ctx.key)
+            return state == .unreviewed || state == .resurfaced
+        }
     }
 
     func triageState(for discoveryId: String) -> TriageState {
-        return trieEntries[discoveryId]?.state ?? .unreviewed
+        guard let ctx = activeContext else { return .unreviewed }
+        return triageStore.state(for: discoveryId, in: ctx.key)
     }
 
     func load() async {
@@ -24,21 +30,32 @@ class DiscoveryStore {
         do {
             async let discos = APIClient.shared.discoveries()
             async let mani = APIClient.shared.manifest()
-            let (d, m) = try await (discos, mani)
+            async let triage = APIClient.shared.triageEntries()
+            let (d, m, t) = try await (discos, mani, triage)
             discoveries = d
             contexts = m.contexts
             activeContext = m.contexts.first(where: { $0.active }) ?? m.contexts.first
+            triageStore.loadFromServer(t)
         } catch {
             self.error = error.localizedDescription
         }
         isLoading = false
     }
 
-    func setTriage(discovery: Discovery, state: TriageState) async {
+    func triage(discovery: Discovery, state: TriageState) async {
         guard let ctx = activeContext else { return }
+        triageStore.setState(state, for: discovery.id, in: ctx.key)
+
+        // Haptic feedback based on state
+        if state == .saved {
+            UINotificationFeedbackGenerator().notificationOccurred(.success)
+        } else if state == .dismissed {
+            UINotificationFeedbackGenerator().notificationOccurred(.warning)
+        }
+        UIImpactFeedbackGenerator(style: .medium).impactOccurred()
+
         do {
             try await APIClient.shared.setTriage(discoveryId: discovery.id, contextKey: ctx.key, state: state)
-            trieEntries[discovery.id] = TriageEntry(discoveryId: discovery.id, state: state, updatedAt: Date(), contextKey: ctx.key)
         } catch {
             self.error = error.localizedDescription
         }

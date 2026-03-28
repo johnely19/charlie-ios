@@ -1,4 +1,6 @@
 import SwiftUI
+import UIKit
+import MapKit
 import CoreLocation
 
 struct PlaceBottomSheet: View {
@@ -43,15 +45,13 @@ struct PlaceBottomSheet: View {
                 HStack(spacing: 12) {
                     TriageButton(label: "Save", icon: "plus.circle.fill", color: .green) {
                         Task {
-                            await store.setTriage(discovery: discovery, state: .saved)
-                            UINotificationFeedbackGenerator().notificationOccurred(.success)
+                            await store.triage(discovery: discovery, state: .saved)
                             dismiss()
                         }
                     }
                     TriageButton(label: "Skip", icon: "minus.circle.fill", color: .orange) {
                         Task {
-                            await store.setTriage(discovery: discovery, state: .dismissed)
-                            UINotificationFeedbackGenerator().notificationOccurred(.warning)
+                            await store.triage(discovery: discovery, state: .dismissed)
                             dismiss()
                         }
                     }
