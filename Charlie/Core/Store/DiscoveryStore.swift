@@ -11,6 +11,8 @@ class DiscoveryStore {
     var activeContext: Context?
     var isLoading = false
     var error: String?
+    var isOffline = false
+    var cacheAge: Date?
 
     @MainActor static var sharedForIntents: DiscoveryStore = {
         let store = DiscoveryStore()
@@ -45,6 +47,26 @@ class DiscoveryStore {
 
     func load() async {
         isLoading = true
+
+        // 1. Load from cache immediately for instant UI
+        let cacheKey = "discoveries"
+        let manifestKey = "manifest"
+
+        if let cached = await DiskCache.shared.load([Discovery].self, key: cacheKey) {
+            discoveries = cached
+            isOffline = true // assume offline until network succeeds
+            if let age = await DiskCache.shared.age(of: cacheKey) {
+                cacheAge = Date().addingTimeInterval(-age)
+            }
+        }
+        if let cachedManifest = await DiskCache.shared.load(UserManifest.self, key: manifestKey) {
+            contexts = cachedManifest.contexts
+            if activeContext == nil {
+                activeContext = cachedManifest.contexts.first(where: { $0.active }) ?? cachedManifest.contexts.first
+            }
+        }
+
+        // 2. Try network
         do {
             async let discos = APIClient.shared.discoveries()
             async let mani = APIClient.shared.manifest()
@@ -54,9 +76,20 @@ class DiscoveryStore {
             contexts = m.contexts
             activeContext = m.contexts.first(where: { $0.active }) ?? m.contexts.first
             triageStore.loadFromServer(t)
+            isOffline = false
+
+            // 3. Save to cache
+            await DiskCache.shared.save(d, key: cacheKey)
+            await DiskCache.shared.save(m, key: manifestKey)
         } catch {
-            self.error = error.localizedDescription
+            // Network failed — use cache (already loaded above)
+            isOffline = true
+            self.error = nil // don't show error if we have cached data
+            if discoveries.isEmpty {
+                self.error = "Unable to connect. Check your network."
+            }
         }
+
         isLoading = false
         updateWidgetData()
 

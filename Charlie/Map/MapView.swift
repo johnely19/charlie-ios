@@ -96,6 +96,15 @@ struct MapView: View {
                     }
                     Spacer()
                 }
+
+                if store.isOffline {
+                    HStack {
+                        Spacer()
+                        OfflineBanner()
+                        Spacer()
+                    }
+                    .padding(.bottom, 120)
+                }
             }
         }
         .sheet(item: $selectedDiscovery) { discovery in
