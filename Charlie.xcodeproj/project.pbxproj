@@ -17,6 +17,8 @@
 		MapView_swift_AA0000000000000008 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = MapView_swift_REF0000000008 /* MapView.swift */; };
 		ContextSwitcher_swift_AA0000000000000009 /* ContextSwitcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = ContextSwitcher_swift_REF0000000009 /* ContextSwitcher.swift */; };
 		PlaceBottomSheet_swift_AA0000000000000010 /* PlaceBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = PlaceBottomSheet_swift_REF0000000010 /* PlaceBottomSheet.swift */; };
+		PlaceCard_swift_AA0000000000000011 /* PlaceCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = PlaceCard_swift_REF0000000011 /* PlaceCard.swift */; };
+		UserManifest_swift_AA0000000000000012 /* UserManifest.swift in Sources */ = {isa = PBXBuildFile; fileRef = UserManifest_swift_REF0000000012 /* UserManifest.swift */; };
 		MapKit_framework_REF0000000001 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = MapKit_framework_REF0000000002 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
@@ -34,6 +36,8 @@
 		Charlie_InfoPlist_REF0000000011 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		Charlie_Product_REF0000000012 /* Charlie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Charlie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		MapKit_framework_REF0000000002 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		PlaceCard_swift_REF0000000011 /* PlaceCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceCard.swift; sourceTree = "<group>"; };
+		UserManifest_swift_REF0000000012 /* UserManifest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManifest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +89,8 @@
 				Discovery_swift_REF0000000003 /* Discovery.swift */,
 				Context_swift_REF0000000004 /* Context.swift */,
 				TriageState_swift_REF0000000005 /* TriageState.swift */,
+				PlaceCard_swift_REF0000000011 /* PlaceCard.swift */,
+				UserManifest_swift_REF0000000012 /* UserManifest.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -209,6 +215,8 @@
 				MapView_swift_AA0000000000000008 /* MapView.swift in Sources */,
 				ContextSwitcher_swift_AA0000000000000009 /* ContextSwitcher.swift in Sources */,
 				PlaceBottomSheet_swift_AA0000000000000010 /* PlaceBottomSheet.swift in Sources */,
+				PlaceCard_swift_AA0000000000000011 /* PlaceCard.swift in Sources */,
+				UserManifest_swift_AA0000000000000012 /* UserManifest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
