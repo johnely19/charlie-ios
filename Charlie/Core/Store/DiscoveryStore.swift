@@ -20,6 +20,17 @@ class DiscoveryStore {
         }
     }
 
+    var savedDiscoveriesForRoute: [Discovery] {
+        guard let ctx = activeContext else { return [] }
+        return discoveries.filter { d in
+            d.contextKey == ctx.key && triageStore.state(for: d.id, in: ctx.key) == .saved
+        }
+    }
+
+    var hasEnoughSavedForRoute: Bool {
+        savedDiscoveriesForRoute.count >= 3
+    }
+
     func triageState(for discoveryId: String) -> TriageState {
         guard let ctx = activeContext else { return .unreviewed }
         return triageStore.state(for: discoveryId, in: ctx.key)
