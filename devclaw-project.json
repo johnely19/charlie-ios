@@ -1,0 +1,7 @@
+{
+  "name": "charlie-ios",
+  "repo": "johnely19/charlie-ios",
+  "language": "swift",
+  "framework": "swiftui",
+  "description": "Charlie iOS — SwiftUI MapKit Apple Maps travel AI app"
+}
