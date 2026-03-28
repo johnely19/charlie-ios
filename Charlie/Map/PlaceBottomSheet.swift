@@ -12,7 +12,11 @@ struct PlaceBottomSheet: View {
     var body: some View {
         if currentDetent == .large {
             NavigationStack {
-                PlaceCardDetailView(discovery: discovery)
+                if discovery.type == .accommodation || discovery.type == .hotel {
+                    AccommodationDetailView(discovery: discovery)
+                } else {
+                    PlaceCardDetailView(discovery: discovery)
+                }
             }
         } else {
             collapsedSheetContent
