@@ -26,6 +26,7 @@
 		CharlieIntents_swift_AA0000000000000017 /* CharlieIntents.swift in Sources */ = {isa = PBXBuildFile; fileRef = CharlieIntents_swift_REF0000000017 /* CharlieIntents.swift */; };
 		NotificationManager_swift_AA0000000000000018 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = NotificationManager_swift_REF0000000018 /* NotificationManager.swift */; };
 		CharlieWidget_swift_AA0000000000000019 /* CharlieWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = CharlieWidget_swift_REF0000000019 /* CharlieWidget.swift */; };
+		OnboardingView_swift_AA0000000000000022 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = OnboardingView_swift_REF0000000022 /* OnboardingView.swift */; };
 		MapKit_framework_REF0000000001 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = MapKit_framework_REF0000000002 /* MapKit.framework */; };
 		Security_framework_REF0000000014 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = Security_framework_REF0000000015 /* Security.framework */; };
 /* End PBXBuildFile section */
@@ -54,6 +55,7 @@
 		CharlieIntents_swift_REF0000000017 /* CharlieIntents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharlieIntents.swift; sourceTree = "<group>"; };
 		NotificationManager_swift_REF0000000018 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		CharlieWidget_swift_REF0000000019 /* CharlieWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharlieWidget.swift; sourceTree = "<group>"; };
+		OnboardingView_swift_REF0000000022 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		CharlieWidget_InfoPlist_REF0000000020 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CharlieWidget_Product_REF0000000021 /* CharlieWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = CharlieWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -89,6 +91,7 @@
 				Charlie_InfoPlist_REF0000000011 /* Info.plist */,
 				Charlie_Core_Group_REF0000000018 /* Core */,
 				Charlie_Map_Group_REF0000000019 /* Map */,
+				Charlie_Onboarding_Group_REF0000000027 /* Onboarding */,
 				Charlie_Intents_Group_REF0000000024 /* Intents */,
 			);
 			path = Charlie;
