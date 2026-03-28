@@ -18,6 +18,9 @@ struct ContextSwitcher: View {
                 }
             }
             .pickerStyle(.menu)
+            .onChange(of: store.activeContext) { _, _ in
+                HapticManager.soft()
+            }
 
             Spacer()
 

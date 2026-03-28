@@ -30,6 +30,7 @@ struct PlaceBottomSheet: View {
                 // Hero image (120pt tall, full width)
                 AsyncImage(url: discovery.heroImageURL) { image in
                     image.resizable().aspectRatio(contentMode: .fill)
+                        .transition(.opacity.animation(.charlieFadeIn))
                 } placeholder: {
                     TypeGradientView(type: discovery.type)
                 }
@@ -166,6 +167,7 @@ struct TriageButton: View {
     let icon: String
     let color: Color
     let action: () -> Void
+    @State private var isPressed = false
 
     var body: some View {
         Button(action: action) {
@@ -180,6 +182,13 @@ struct TriageButton: View {
             .background(color.opacity(0.1))
             .clipShape(RoundedRectangle(cornerRadius: 10))
         }
+        .scaleEffect(isPressed ? 0.93 : 1.0)
+        .animation(.charlieSnappy, value: isPressed)
+        .simultaneousGesture(
+            DragGesture(minimumDistance: 0)
+                .onChanged { _ in isPressed = true }
+                .onEnded { _ in isPressed = false }
+        )
     }
 }
 

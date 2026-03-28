@@ -25,7 +25,11 @@ struct PlacePinView: View {
                 .foregroundColor(.white)
         }
         .shadow(radius: isSelected ? 4 : 2)
-        .animation(.spring(), value: isSelected)
+        .scaleEffect(isSelected ? 1.2 : 1.0)
+        .animation(.charlieSnappy, value: isSelected)
+        .onTapGesture {
+            HapticManager.light()
+        }
     }
 
     var pinSystemImage: String {

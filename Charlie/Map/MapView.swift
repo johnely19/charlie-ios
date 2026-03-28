@@ -56,6 +56,7 @@ struct MapView: View {
             .ignoresSafeArea(edges: .bottom)
             .onChange(of: store.activeContext) { _, newCtx in
                 routeManager.clear()
+                HapticManager.soft()
                 if let region = newCtx?.mapRegion {
                     withAnimation(.easeInOut(duration: 1.0)) {
                         position = .region(region)
