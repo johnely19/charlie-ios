@@ -2,6 +2,7 @@ import SwiftUI
 
 struct ContextSwitcher: View {
     @Bindable var store: DiscoveryStore
+    var onChatTap: (() -> Void)?
 
     var body: some View {
         HStack {
@@ -18,8 +19,10 @@ struct ContextSwitcher: View {
 
             Spacer()
 
-            Button(action: {}) {
-                Image(systemName: "bubble.left")
+            if let onChatTap = onChatTap {
+                Button(action: onChatTap) {
+                    Image(systemName: "bubble.left.and.bubble.right")
+                }
             }
         }
         .padding(.horizontal)

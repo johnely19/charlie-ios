@@ -4,6 +4,7 @@ import MapKit
 struct MapView: View {
     @Environment(DiscoveryStore.self) var store
     @State private var selectedDiscovery: Discovery?
+    @State private var showChat = false
     @State private var position: MapCameraPosition = .region(
         MKCoordinateRegion(
             center: CLLocationCoordinate2D(latitude: 43.6532, longitude: -79.3832),
@@ -47,12 +48,15 @@ struct MapView: View {
                 }
             }
 
-            ContextSwitcher(store: store)
+            ContextSwitcher(store: store, onChatTap: { showChat = true })
         }
         .sheet(item: $selectedDiscovery) { discovery in
             PlaceBottomSheet(discovery: discovery)
                 .presentationDetents([.height(280), .medium, .large])
                 .presentationDragIndicator(.visible)
+        }
+        .sheet(isPresented: $showChat) {
+            ChatView().environment(store)
         }
         .task {
             if store.discoveries.isEmpty {
