@@ -36,6 +36,24 @@ struct Discovery: Codable, Identifiable {
         }
         return URL(string: "https://compass-v2-lake.vercel.app" + heroImage)
     }
+
+    // Deep link: charlie://placecards/{place_id}
+    // Fallback: compass web URL
+    var shareURL: URL {
+        if let placeId = placeId {
+            return URL(string: "https://compass-v2-lake.vercel.app/placecards/\(placeId)")
+                ?? URL(string: "https://compass-v2-lake.vercel.app")!
+        }
+        return URL(string: "https://compass-v2-lake.vercel.app")!
+    }
+
+    var shareText: String {
+        var text = "📍 \(name)"
+        if let address = address { text += "\n\(address)" }
+        if let rating = rating { text += "\n⭐️ \(String(format: "%.1f", rating))" }
+        text += "\n\nvia Charlie"
+        return text
+    }
 }
 
 enum DiscoveryType: String, Codable {

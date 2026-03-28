@@ -42,5 +42,16 @@
     <string>Charlie uses your location to show nearby places</string>
     <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
     <string>Charlie uses your location in the background to surface nearby places</string>
+    <key>CFBundleURLTypes</key>
+    <array>
+        <dict>
+            <key>CFBundleURLName</key>
+            <string>com.charlie.travel</string>
+            <key>CFBundleURLSchemes</key>
+            <array>
+                <string>charlie</string>
+            </array>
+        </dict>
+    </array>
 </dict>
 </plist>

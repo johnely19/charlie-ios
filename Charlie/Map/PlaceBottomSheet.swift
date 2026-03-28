@@ -71,6 +71,12 @@ struct PlaceBottomSheet: View {
                             dismiss()
                         }
                     }
+                    ShareLink(item: discovery.shareURL, message: Text(discovery.shareText)) {
+                        Image(systemName: "square.and.arrow.up.circle")
+                            .font(.title3)
+                            .foregroundStyle(.secondary)
+                    }
+                    .buttonStyle(.borderless)
                     Spacer()
                     Button("Full details") {
                         currentDetent = .large

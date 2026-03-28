@@ -84,6 +84,11 @@ struct PlaceCardDetailView: View {
             }
         }
         .navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+            ToolbarItem(placement: .topBarTrailing) {
+                ShareButton(discovery: discovery, style: .icon)
+            }
+        }
     }
 
     private func openInMaps() {
