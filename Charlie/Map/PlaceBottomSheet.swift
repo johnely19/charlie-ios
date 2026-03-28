@@ -10,6 +10,17 @@ struct PlaceBottomSheet: View {
     @State private var currentDetent: PresentationDetent = .height(280)
 
     var body: some View {
+        if currentDetent == .large {
+            NavigationStack {
+                PlaceCardDetailView(discovery: discovery)
+            }
+        } else {
+            collapsedSheetContent
+        }
+    }
+
+    @ViewBuilder
+    private var collapsedSheetContent: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 0) {
                 // Hero image (120pt tall, full width)
