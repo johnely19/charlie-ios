@@ -1,6 +1,16 @@
 import SwiftUI
 import MapKit
 
+// MARK: - Smart initial map region based on active context / city
+private func defaultRegion(for context: Context?) -> MKCoordinateRegion {
+    if let region = context?.mapRegion { return region }
+    // Fallback to Toronto if no context
+    return MKCoordinateRegion(
+        center: CLLocationCoordinate2D(latitude: 43.6532, longitude: -79.3832),
+        latitudinalMeters: 15000, longitudinalMeters: 15000
+    )
+}
+
 struct MapView: View {
     @Environment(DiscoveryStore.self) var store
     @Environment(\.colorScheme) var colorScheme
@@ -10,6 +20,8 @@ struct MapView: View {
     @State private var showContextManagement = false
     @State private var showSearch = false
     @State private var routeManager = RouteOverlayManager()
+
+    // Start with a placeholder — updated immediately in .task once data loads
     @State private var position: MapCameraPosition = .region(
         MKCoordinateRegion(
             center: CLLocationCoordinate2D(latitude: 43.6532, longitude: -79.3832),
@@ -64,11 +76,29 @@ struct MapView: View {
                     }
                 }
             }
+            // When data first loads, fly to the active context's city
+            .onChange(of: store.contexts) { _, _ in
+                if let ctx = store.activeContext {
+                    withAnimation(.easeInOut(duration: 1.2)) {
+                        position = .region(defaultRegion(for: ctx))
+                    }
+                }
+            }
 
-            ContextSwitcher(store: store, onChatTap: { showChat = true }, onTripTap: { showTrip = true }, onManageTap: { showContextManagement = true }, onSearchTap: { showSearch = true })
+            VStack(spacing: 0) {
+                ContextSwitcher(
+                    store: store,
+                    onChatTap: { showChat = true },
+                    onTripTap: { showTrip = true },
+                    onManageTap: { showContextManagement = true },
+                    onSearchTap: { showSearch = true }
+                )
+                MorningBriefingView()
+                    .environment(store)
+                Spacer()
+            }
 
-            MorningBriefingView()
-
+            // Route toggle button
             VStack {
                 Spacer()
                 HStack {
@@ -122,33 +152,28 @@ struct MapView: View {
             TripView().environment(store)
         }
         .sheet(isPresented: $showContextManagement) {
-            ContextManagementView()
-                .environment(store)
+            ContextManagementView().environment(store)
         }
         .sheet(isPresented: $showSearch) {
             PlaceSearchView(position: $position).environment(store)
         }
-        .task {
-            if store.discoveries.isEmpty {
-                await store.load()
-            }
+    }
+
+    // MARK: - Route helpers (must be inside struct)
+    func toggleRoute() async {
+        if routeManager.isVisible {
+            routeManager.clear()
+            return
         }
+        guard let origin = store.activeContext?.accommodationCoordinate else { return }
+        let destinations = store.savedDiscoveriesForRoute.compactMap { $0.coordinate }
+        guard destinations.count >= 3 else { return }
+        routeManager.isVisible = true
+        await routeManager.buildRoutes(from: origin, to: destinations)
     }
 }
 
 #Preview {
     MapView()
         .environment(DiscoveryStore())
-}
-
-func toggleRoute() async {
-    if routeManager.isVisible {
-        routeManager.clear()
-        return
-    }
-    guard let origin = store.activeContext?.accommodationCoordinate else { return }
-    let destinations = store.savedDiscoveriesForRoute.compactMap { $0.coordinate }
-    guard destinations.count >= 3 else { return }
-    routeManager.isVisible = true
-    await routeManager.buildRoutes(from: origin, to: destinations)
 }

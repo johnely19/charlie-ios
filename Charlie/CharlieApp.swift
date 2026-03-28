@@ -14,33 +14,49 @@ struct CharlieApp: App {
             if isAuthenticated {
                 MapView()
                     .environment(discoveryStore)
-                    .task { await NotificationManager.shared.requestPermission() }
+                    .task {
+                        // Restore token into APIClient on every cold launch
+                        if let token = AuthManager.shared.loadToken() {
+                            await APIClient.shared.setToken(token)
+                        }
+                        // Load data — cache-first so map renders even offline
+                        await discoveryStore.load()
+                        await NotificationManager.shared.requestPermission()
+                    }
             } else {
-                OnboardingView(onComplete: { isAuthenticated = true })
+                OnboardingView(onComplete: {
+                    isAuthenticated = true
+                    // After onboarding, load data (token already set + cache already warm)
+                    Task {
+                        if let token = AuthManager.shared.loadToken() {
+                            await APIClient.shared.setToken(token)
+                        }
+                        await discoveryStore.load()
+                    }
+                })
             }
         }
     }
 }
 
 class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDelegate {
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication,
+                     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         UNUserNotificationCenter.current().delegate = self
         application.registerForRemoteNotifications()
         return true
     }
 
-    // Handle notification tap — foreground
-    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification) async -> UNNotificationPresentationOptions {
+    func userNotificationCenter(_ center: UNUserNotificationCenter,
+                                 willPresent notification: UNNotification) async -> UNNotificationPresentationOptions {
         return [.banner, .badge, .sound]
     }
 
-    // Handle notification tap — background/cold launch
-    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse) async {
+    func userNotificationCenter(_ center: UNUserNotificationCenter,
+                                 didReceive response: UNNotificationResponse) async {
         let userInfo = response.notification.request.content.userInfo
         let type = userInfo["type"] as? String ?? ""
         let contextKey = userInfo["contextKey"] as? String ?? ""
-
-        // Post notification for the app to handle deep linking
         NotificationCenter.default.post(
             name: .charlieNotificationTapped,
             object: nil,
@@ -48,18 +64,20 @@ class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDele
         )
     }
 
-    // APNs token registration (placeholder — needed for server-side push)
-    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-        let tokenString = deviceToken.map { String(format: "%02x", $0) }.joined()
-        print("[APNs] Device token: \(tokenString)")
-        // TODO: POST token to /api/notifications/register when endpoint exists
+    func application(_ application: UIApplication,
+                     didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        let token = deviceToken.map { String(format: "%02x", $0) }.joined()
+        print("[APNs] Device token: \(token)")
+        // TODO: POST to /api/notifications/register
     }
 
-    func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
-        print("[APNs] Failed to register: \(error)")
+    func application(_ application: UIApplication,
+                     didFailToRegisterForRemoteNotificationsWithError error: Error) {
+        print("[APNs] Failed: \(error)")
     }
 }
 
 extension Notification.Name {
     static let charlieNotificationTapped = Notification.Name("charlieNotificationTapped")
+    static let charlieOpenPlaceCard = Notification.Name("charlieOpenPlaceCard")
 }

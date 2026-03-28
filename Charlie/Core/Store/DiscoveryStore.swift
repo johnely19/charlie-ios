@@ -156,18 +156,28 @@ extension Context {
     }
 
     var mapRegion: MKCoordinateRegion {
-        // Default regions for known cities
-        switch city?.lowercased() {
-        case "nyc", "new york":
-            return MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 40.7128, longitude: -74.0060), latitudinalMeters: 20000, longitudinalMeters: 20000)
-        case "toronto":
+        let c = city?.lowercased() ?? ""
+        switch true {
+        case c.contains("new york") || c.contains("nyc") || c.contains("brooklyn") || c.contains("manhattan"):
+            // Center on Brooklyn for that neighbourhood feel
+            return MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 40.6782, longitude: -73.9442), latitudinalMeters: 18000, longitudinalMeters: 18000)
+        case c.contains("boston"):
+            return MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 42.3601, longitude: -71.0589), latitudinalMeters: 12000, longitudinalMeters: 12000)
+        case c.contains("toronto"):
             return MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 43.6532, longitude: -79.3832), latitudinalMeters: 15000, longitudinalMeters: 15000)
+        case c.contains("london"):
+            return MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 51.5074, longitude: -0.1278), latitudinalMeters: 20000, longitudinalMeters: 20000)
+        case c.contains("paris"):
+            return MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 48.8566, longitude: 2.3522), latitudinalMeters: 15000, longitudinalMeters: 15000)
+        case c.contains("los angeles") || c.contains("la"):
+            return MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 34.0522, longitude: -118.2437), latitudinalMeters: 25000, longitudinalMeters: 25000)
+        case c.contains("chicago"):
+            return MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 41.8781, longitude: -87.6298), latitudinalMeters: 20000, longitudinalMeters: 20000)
+        case c.contains("san francisco") || c.contains("sf"):
+            return MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 37.7749, longitude: -122.4194), latitudinalMeters: 12000, longitudinalMeters: 12000)
         default:
-            return MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 43.6532, longitude: -79.3832), latitudinalMeters: 50000, longitudinalMeters: 50000)
+            // Fallback to Toronto if completely unknown
+            return MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 43.6532, longitude: -79.3832), latitudinalMeters: 30000, longitudinalMeters: 30000)
         }
     }
-}
-
-extension String {
-    var nilIfEmpty: String? { isEmpty ? nil : self }
 }

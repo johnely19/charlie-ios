@@ -137,26 +137,29 @@ struct OnboardingView: View {
 
         Task {
             do {
+                // 1. Exchange code for token
                 let response = try await APIClient.shared.authenticate(code: inviteCode)
                 AuthManager.shared.saveToken(response.token)
-                APIClient.shared.setToken(response.token)
+                await APIClient.shared.setToken(response.token)
 
-                // Check if user has a manifest
+                // 2. Pre-load and cache manifest + discoveries so the map has data immediately
+                async let manifestFetch = APIClient.shared.manifest()
+                async let discoveriesFetch = APIClient.shared.discoveries()
+
                 do {
-                    _ = try await APIClient.shared.manifest()
-                    // User has manifest, go to complete
-                    withAnimation {
-                        currentStep = .complete
-                    }
-                    // After a delay, complete onboarding
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                        onComplete()
-                    }
+                    let (manifest, discoveries) = try await (manifestFetch, discoveriesFetch)
+                    // Warm the disk cache so first map load is instant
+                    await DiskCache.shared.save(discoveries, key: "discoveries")
+                    await DiskCache.shared.save(manifest, key: "manifest")
+                    // User has data — go to complete
+                    withAnimation { currentStep = .complete }
                 } catch {
-                    // No manifest, go to setup
-                    withAnimation {
-                        currentStep = .setup
-                    }
+                    // Auth succeeded but no data yet (new user) — go to setup
+                    withAnimation { currentStep = .setup }
+                }
+
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                    onComplete()
                 }
             } catch {
                 errorMessage = "Invalid invite code. Please try again."
