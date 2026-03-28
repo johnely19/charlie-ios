@@ -3,6 +3,7 @@ import SwiftUI
 struct ContextSwitcher: View {
     @Bindable var store: DiscoveryStore
     var onChatTap: (() -> Void)?
+    var onTripTap: (() -> Void)?
 
     var body: some View {
         HStack {
@@ -18,6 +19,12 @@ struct ContextSwitcher: View {
             .pickerStyle(.menu)
 
             Spacer()
+
+            if let onTripTap = onTripTap, store.activeContext?.type == .trip {
+                Button(action: onTripTap) {
+                    Image(systemName: "suitcase")
+                }
+            }
 
             if let onChatTap = onChatTap {
                 Button(action: onChatTap) {

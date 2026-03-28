@@ -5,6 +5,7 @@ struct MapView: View {
     @Environment(DiscoveryStore.self) var store
     @State private var selectedDiscovery: Discovery?
     @State private var showChat = false
+    @State private var showTrip = false
     @State private var position: MapCameraPosition = .region(
         MKCoordinateRegion(
             center: CLLocationCoordinate2D(latitude: 43.6532, longitude: -79.3832),
@@ -48,7 +49,7 @@ struct MapView: View {
                 }
             }
 
-            ContextSwitcher(store: store, onChatTap: { showChat = true })
+            ContextSwitcher(store: store, onChatTap: { showChat = true }, onTripTap: { showTrip = true })
         }
         .sheet(item: $selectedDiscovery) { discovery in
             PlaceBottomSheet(discovery: discovery)
@@ -57,6 +58,9 @@ struct MapView: View {
         }
         .sheet(isPresented: $showChat) {
             ChatView().environment(store)
+        }
+        .sheet(isPresented: $showTrip) {
+            TripView().environment(store)
         }
         .task {
             if store.discoveries.isEmpty {

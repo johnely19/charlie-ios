@@ -11,6 +11,9 @@ struct Context: Codable, Identifiable {
     let focus: [String]?
     let travel: TravelData?
     let accommodation: AccommodationInfo?
+    let schedule: [ScheduleDay]?
+    let anchorExperiences: [AnchorExperience]?
+    let people: [String]?
 
     var id: String { key }
 }
@@ -21,7 +24,7 @@ enum ContextType: String, Codable {
 
 struct TravelData: Codable {
     let outbound: FlightInfo?
-    let return: FlightInfo?
+    let returnFlight: FlightInfo?
 }
 
 struct FlightInfo: Codable {
@@ -37,4 +40,17 @@ struct AccommodationInfo: Codable {
     let address: String?
     let lat: Double?
     let lng: Double?
+}
+
+struct ScheduleDay: Codable {
+    let date: String
+    let label: String?
+    let events: [String]
+}
+
+struct AnchorExperience: Codable {
+    let name: String
+    let type: String
+    let date: String?
+    let notes: String?
 }
