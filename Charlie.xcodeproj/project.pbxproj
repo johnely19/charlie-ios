@@ -27,6 +27,9 @@
 		NotificationManager_swift_AA0000000000000018 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = NotificationManager_swift_REF0000000018 /* NotificationManager.swift */; };
 		CharlieWidget_swift_AA0000000000000019 /* CharlieWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = CharlieWidget_swift_REF0000000019 /* CharlieWidget.swift */; };
 		OnboardingView_swift_AA0000000000000022 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = OnboardingView_swift_REF0000000022 /* OnboardingView.swift */; };
+		Briefing_swift_AA0000000000000028 /* Briefing.swift in Sources */ = {isa = PBXBuildFile; fileRef = Briefing_swift_REF0000000028 /* Briefing.swift */; };
+		PlaceSearchView_swift_AA0000000000000029 /* PlaceSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = PlaceSearchView_swift_REF0000000029 /* PlaceSearchView.swift */; };
+		MorningBriefingView_swift_AA0000000000000030 /* MorningBriefingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = MorningBriefingView_swift_REF0000000030 /* MorningBriefingView.swift */; };
 		MapKit_framework_REF0000000001 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = MapKit_framework_REF0000000002 /* MapKit.framework */; };
 		Security_framework_REF0000000014 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = Security_framework_REF0000000015 /* Security.framework */; };
 /* End PBXBuildFile section */
@@ -58,6 +61,9 @@
 		OnboardingView_swift_REF0000000022 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		CharlieWidget_InfoPlist_REF0000000020 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CharlieWidget_Product_REF0000000021 /* CharlieWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = CharlieWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		Briefing_swift_REF0000000028 /* Briefing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Briefing.swift; sourceTree = "<group>"; };
+		PlaceSearchView_swift_REF0000000029 /* PlaceSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceSearchView.swift; sourceTree = "<group>"; };
+		MorningBriefingView_swift_REF0000000030 /* MorningBriefingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MorningBriefingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +131,7 @@
 				TriageState_swift_REF0000000005 /* TriageState.swift */,
 				PlaceCard_swift_REF0000000011 /* PlaceCard.swift */,
 				UserManifest_swift_REF0000000012 /* UserManifest.swift */,
+				Briefing_swift_REF0000000028 /* Briefing.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -154,6 +161,8 @@
 				PlacePinView_swift_REF0000000014 /* PlacePinView.swift */,
 				LookAroundButton_swift_REF0000000015 /* LookAroundButton.swift */,
 				RouteOverlayManager_swift_REF0000000016 /* RouteOverlayManager.swift */,
+				PlaceSearchView_swift_REF0000000029 /* PlaceSearchView.swift */,
+				MorningBriefingView_swift_REF0000000030 /* MorningBriefingView.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -298,6 +307,10 @@
 				RouteOverlayManager_swift_AA0000000000000016 /* RouteOverlayManager.swift in Sources */,
 				CharlieIntents_swift_AA0000000000000017 /* CharlieIntents.swift in Sources */,
 				NotificationManager_swift_AA0000000000000018 /* NotificationManager.swift in Sources */,
+				OnboardingView_swift_AA0000000000000022 /* OnboardingView.swift in Sources */,
+				Briefing_swift_AA0000000000000028 /* Briefing.swift in Sources */,
+				PlaceSearchView_swift_AA0000000000000029 /* PlaceSearchView.swift in Sources */,
+				MorningBriefingView_swift_AA0000000000000030 /* MorningBriefingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

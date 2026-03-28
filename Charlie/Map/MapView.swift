@@ -8,6 +8,7 @@ struct MapView: View {
     @State private var showChat = false
     @State private var showTrip = false
     @State private var showContextManagement = false
+    @State private var showSearch = false
     @State private var routeManager = RouteOverlayManager()
     @State private var position: MapCameraPosition = .region(
         MKCoordinateRegion(
@@ -64,7 +65,9 @@ struct MapView: View {
                 }
             }
 
-            ContextSwitcher(store: store, onChatTap: { showChat = true }, onTripTap: { showTrip = true }, onManageTap: { showContextManagement = true })
+            ContextSwitcher(store: store, onChatTap: { showChat = true }, onTripTap: { showTrip = true }, onManageTap: { showContextManagement = true }, onSearchTap: { showSearch = true })
+
+            MorningBriefingView()
 
             VStack {
                 Spacer()
@@ -121,6 +124,9 @@ struct MapView: View {
         .sheet(isPresented: $showContextManagement) {
             ContextManagementView()
                 .environment(store)
+        }
+        .sheet(isPresented: $showSearch) {
+            PlaceSearchView(position: $position).environment(store)
         }
         .task {
             if store.discoveries.isEmpty {

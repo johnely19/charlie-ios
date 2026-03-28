@@ -5,6 +5,7 @@ struct ContextSwitcher: View {
     var onChatTap: (() -> Void)?
     var onTripTap: (() -> Void)?
     var onManageTap: (() -> Void)?
+    var onSearchTap: (() -> Void)?
 
     var body: some View {
         HStack {
@@ -23,6 +24,12 @@ struct ContextSwitcher: View {
             }
 
             Spacer()
+
+            if let onSearchTap = onSearchTap {
+                Button(action: onSearchTap) {
+                    Image(systemName: "magnifyingglass")
+                }
+            }
 
             if let onManageTap = onManageTap {
                 Button(action: onManageTap) {
