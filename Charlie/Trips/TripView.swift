@@ -4,6 +4,8 @@ struct TripView: View {
     @Environment(DiscoveryStore.self) var store
     @Environment(\.dismiss) var dismiss
 
+    @State private var showCompanion = false
+
     var context: Context? {
         store.activeContext
     }
@@ -153,6 +155,18 @@ struct TripView: View {
         .navigationTitle("Trip")
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
+            ToolbarItem(placement: .topBarLeading) {
+                Button {
+                    showCompanion = true
+                } label: {
+                    Label("Companions", systemImage: context?.isShared == true ? "person.2.fill" : "person.badge.plus")
+                }
+                .sheet(isPresented: $showCompanion) {
+                    if let ctx = context {
+                        CompanionView(context: ctx).environment(store)
+                    }
+                }
+            }
             ToolbarItem(placement: .topBarTrailing) {
                 Button("Done") {
                     dismiss()
