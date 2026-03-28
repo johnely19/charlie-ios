@@ -70,7 +70,3 @@ class RouteOverlayManager {
         return a.distance(from: b)
     }
 }
-
-#Preview {
-    RouteOverlayManager()
-}

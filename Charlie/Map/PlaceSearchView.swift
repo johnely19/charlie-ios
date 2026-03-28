@@ -7,45 +7,46 @@ struct PlaceSearchView: View {
     @State private var searchText = ""
     @State private var searchResults: [MKMapItem] = []
     @State private var isSearching = false
-    @Binding var position: MapCameraPosition
+    @State private var addedIds: Set<String> = []
 
     var body: some View {
         NavigationStack {
-            List {
-                if isSearching {
-                    HStack {
-                        Spacer()
-                        ProgressView("Searching...")
-                        Spacer()
-                    }
-                    .listRowBackground(Color.clear)
-                } else if searchResults.isEmpty && !searchText.isEmpty {
-                    Text("No results found")
-                        .foregroundColor(.secondary)
+            Group {
+                if searchText.isEmpty {
+                    ContentUnavailableView(
+                        "Search for a place",
+                        systemImage: "magnifyingglass",
+                        description: Text("Try 'Neptune Oyster Boston' or 'Via Carota NYC'")
+                    )
+                } else if isSearching {
+                    ProgressView("Searching…")
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                } else if searchResults.isEmpty {
+                    ContentUnavailableView("No results", systemImage: "mappin.slash")
                 } else {
-                    ForEach(searchResults, id: \.self) { item in
-                        PlaceSearchRow(item: item) {
+                    List(searchResults, id: \.self) { item in
+                        PlaceSearchRow(
+                            item: item,
+                            isAdded: addedIds.contains(item.name ?? "")
+                        ) {
                             addToCompass(item)
                         }
                     }
+                    .listStyle(.plain)
                 }
             }
-            .listStyle(.plain)
-            .searchable(text: $searchText, prompt: "Search places")
+            .searchable(text: $searchText,
+                        placement: .navigationBarDrawer(displayMode: .always),
+                        prompt: "Search places…")
             .onChange(of: searchText) { _, newValue in
-                if !newValue.isEmpty {
-                    Task { await searchPlaces(query: newValue) }
-                } else {
-                    searchResults = []
-                }
+                guard !newValue.isEmpty else { searchResults = []; return }
+                Task { await searchPlaces(query: newValue) }
             }
-            .navigationTitle("Search")
+            .navigationTitle("Add a Place")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
-                ToolbarItem(placement: .cancellationAction) {
-                    Button("Cancel") {
-                        dismiss()
-                    }
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button("Done") { dismiss() }
                 }
             }
         }
@@ -57,67 +58,92 @@ struct PlaceSearchView: View {
 
         let request = MKLocalSearch.Request()
         request.naturalLanguageQuery = query
-
         if let region = store.activeContext?.mapRegion {
             request.region = region
         }
 
-        let search = MKLocalSearch(request: request)
         do {
-            let response = try await search.start()
+            let response = try await MKLocalSearch(request: request).start()
             searchResults = response.mapItems
         } catch {
             searchResults = []
         }
     }
 
-    func addToCompass(_ item: MKMapItem) {
-        guard let coordinate = item.placemark.coordinate else { return }
+    private func addToCompass(_ item: MKMapItem) {
+        // CLLocationCoordinate2D is a struct, always non-optional on MKPlacemark
+        let coord = item.placemark.coordinate
+        let name = item.name ?? "Unknown Place"
+        addedIds.insert(name)
 
-        let newDiscovery = Discovery(
+        let discovery = Discovery(
             id: UUID().uuidString,
-            name: item.name ?? "New Place",
-            type: .restaurant,
-            description: item.placemark.title ?? "",
+            name: name,
+            type: inferType(from: item),
             contextKey: store.activeContext?.key ?? "",
-            latitude: coordinate.latitude,
-            longitude: coordinate.longitude,
-            createdAt: Date()
+            placeId: nil,
+            heroImage: nil,
+            address: item.placemark.title,
+            city: item.placemark.locality ?? store.activeContext?.city ?? "",
+            rating: nil,
+            lat: coord.latitude,
+            lng: coord.longitude,
+            summary: nil,
+            source: "search:manual",
+            pricePerWeek: nil,
+            bedrooms: nil,
+            swimQuality: nil,
+            amenities: nil,
+            julyAvailable: nil,
+            listingUrl: nil,
+            matchScore: nil,
+            driveFromToronto: nil
         )
 
         Task {
-            await store.triage(discovery: newDiscovery, state: .saved)
-            await MainActor.run {
-                dismiss()
-            }
+            await store.triage(discovery: discovery, state: .unreviewed)
+            UINotificationFeedbackGenerator().notificationOccurred(.success)
         }
+    }
 
-        withAnimation(.easeInOut(duration: 0.8)) {
-            position = .camera(MapCamera(
-                centerCoordinate: coordinate,
-                distance: 1500,
-                heading: 0,
-                pitch: 45
-            ))
+    private func inferType(from item: MKMapItem) -> DiscoveryType {
+        switch item.pointOfInterestCategory {
+        case .restaurant, .bakery:         return .restaurant
+        case .cafe:                        return .cafe
+        case .nightlife, .winery, .brewery: return .bar
+        case .museum:                      return .museum
+        case .theater:                     return .theatre
+        case .hotel:                       return .hotel
+        case .park:                        return .park
+        case .store:                       return .shop
+        default:                           return .restaurant
         }
-
-        HapticManager.soft()
     }
 }
 
 struct PlaceSearchRow: View {
     let item: MKMapItem
+    let isAdded: Bool
     let onAdd: () -> Void
 
     var body: some View {
-        HStack {
-            VStack(alignment: .leading, spacing: 4) {
+        HStack(spacing: 12) {
+            ZStack {
+                RoundedRectangle(cornerRadius: 8)
+                    .fill(Color.blue.opacity(0.1))
+                    .frame(width: 40, height: 40)
+                Image(systemName: "mappin.circle.fill")
+                    .foregroundStyle(.blue)
+            }
+
+            VStack(alignment: .leading, spacing: 2) {
                 Text(item.name ?? "Unknown")
-                    .font(.headline)
+                    .font(.subheadline.weight(.semibold))
+                    .lineLimit(1)
                 if let address = item.placemark.title {
                     Text(address)
                         .font(.caption)
-                        .foregroundColor(.secondary)
+                        .foregroundStyle(.secondary)
                         .lineLimit(1)
                 }
             }
@@ -125,11 +151,12 @@ struct PlaceSearchRow: View {
             Spacer()
 
             Button(action: onAdd) {
-                Image(systemName: "plus.circle.fill")
-                    .font(.title2)
-                    .foregroundColor(.accentColor)
+                Image(systemName: isAdded ? "checkmark.circle.fill" : "plus.circle.fill")
+                    .foregroundStyle(isAdded ? .green : .blue)
+                    .font(.title3)
             }
-            .buttonStyle(.plain)
+            .buttonStyle(.borderless)
+            .disabled(isAdded)
         }
         .padding(.vertical, 4)
     }

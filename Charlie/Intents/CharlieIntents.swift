@@ -1,8 +1,13 @@
 import AppIntents
 import SwiftUI
 
+// MARK: - String extension (used below)
+extension String {
+    var nilIfEmpty: String? { isEmpty ? nil : self }
+}
+
 // MARK: - GetRecommendationIntent
-// "Hey Siri, ask Charlie what to do tonight"
+// "Hey Siri, ask Charlie what to do"
 
 struct GetRecommendationIntent: AppIntent {
     static var title: LocalizedStringResource = "Get a recommendation from Charlie"
@@ -10,7 +15,7 @@ struct GetRecommendationIntent: AppIntent {
 
     static var openAppWhenRun: Bool = false
 
-    func perform() async throws -> some IntentResult & ProvidesStringResult {
+    func perform() async throws -> some IntentResult {
         let store = await DiscoveryStore.sharedForIntents
         let contextKey = store.activeContext?.key ?? ""
         let contextLabel = store.activeContext?.label ?? "your current context"
@@ -19,12 +24,15 @@ struct GetRecommendationIntent: AppIntent {
             d.contextKey == contextKey && store.triageStore.state(for: d.id, in: contextKey) == .saved
         }
 
+        let message: String
         if saved.isEmpty {
-            return .result(value: "No saved places yet for \(contextLabel). Open Charlie to explore and save places.")
+            message = "No saved places yet for \(contextLabel). Open Charlie to explore and save places."
+        } else {
+            let names = saved.prefix(3).map(\.name).joined(separator: ", ")
+            message = "Your top saved places for \(contextLabel): \(names). Open Charlie for the full map."
         }
 
-        let names = saved.prefix(3).map(\.name).joined(separator: ", ")
-        return .result(value: "Your top saved places for \(contextLabel): \(names). Open Charlie for the full map.")
+        return .result(dialog: IntentDialog(stringLiteral: message))
     }
 }
 
@@ -37,10 +45,11 @@ struct CheckTripIntent: AppIntent {
 
     static var openAppWhenRun: Bool = false
 
-    func perform() async throws -> some IntentResult & ProvidesStringResult {
+    func perform() async throws -> some IntentResult {
         let store = await DiscoveryStore.sharedForIntents
+
         guard let ctx = store.activeContext else {
-            return .result(value: "No active trip or outing. Open Charlie to set one up.")
+            return .result(dialog: IntentDialog("No active trip or outing. Open Charlie to set one up."))
         }
 
         let allForCtx = store.discoveries.filter { $0.contextKey == ctx.key }
@@ -55,7 +64,7 @@ struct CheckTripIntent: AppIntent {
             summary += " Top picks: \(topSaved)."
         }
 
-        return .result(value: summary)
+        return .result(dialog: IntentDialog(stringLiteral: summary))
     }
 }
 
@@ -71,19 +80,21 @@ struct SavePlaceIntent: AppIntent {
 
     static var openAppWhenRun: Bool = false
 
-    func perform() async throws -> some IntentResult & ProvidesStringResult {
+    func perform() async throws -> some IntentResult {
         let store = await DiscoveryStore.sharedForIntents
+
         guard let ctx = store.activeContext else {
-            return .result(value: "No active context. Open Charlie to set up a trip first.")
+            return .result(dialog: IntentDialog("No active context. Open Charlie to set up a trip first."))
         }
 
-        // Find by name in existing discoveries
-        if let match = store.discoveries.first(where: { $0.name.localizedCaseInsensitiveContains(placeName) && $0.contextKey == ctx.key }) {
+        if let match = store.discoveries.first(where: {
+            $0.name.localizedCaseInsensitiveContains(placeName) && $0.contextKey == ctx.key
+        }) {
             await store.triage(discovery: match, state: .saved)
-            return .result(value: "Saved \(match.name) to \(ctx.label).")
+            return .result(dialog: IntentDialog(stringLiteral: "Saved \(match.name) to \(ctx.label)."))
         }
 
-        return .result(value: "Couldn't find \(placeName) in \(ctx.label). Open Charlie to search and save manually.")
+        return .result(dialog: IntentDialog(stringLiteral: "Couldn't find \(placeName) in \(ctx.label). Open Charlie to search and save manually."))
     }
 }
 
